@@ -1,3 +1,4 @@
-let circular = {
+let circular = {}
+circular = {
   ...circular
 }
