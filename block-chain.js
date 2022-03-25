@@ -5,6 +5,3 @@ const blockChain = (data, prev = {index: 0, hash: 0}) => {
   obj.chain = (data) => blockChain(data, prev)
   return obj
 }
-
-const first = blockChain({a: 1})
-console.log(first.chain({a: 200}))
