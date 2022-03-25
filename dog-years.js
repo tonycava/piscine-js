@@ -10,5 +10,5 @@ const obj = {
 }
 const dogYears = (planet, age) => {
   age = age / 60 / 60 / 24 / 365.25 * 7
-  return (age * obj[planet]).toFixed(2);
+  return Number((age * obj[planet]).toFixed(2));
 }
