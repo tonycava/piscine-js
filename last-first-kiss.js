@@ -1,9 +1,9 @@
 const first = (arg) => {
-  return arg[0]
+  return arg.charAt(0)
 }
 const last = (arg) => {
-  return arg[-1]
+  return arg.charAt(-1)
 }
-const kiss = (arr) => {
+const kiss = (arg) => {
   return [last, first]
 }
