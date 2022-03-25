@@ -1,4 +1,2 @@
 let circular = {}
-circular = {
-  ...circular
-}
+circular.circular = circular
