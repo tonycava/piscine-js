@@ -4,6 +4,6 @@ const first = (arg) => {
 const last = (arg) => {
   return arg[-1]
 }
-const kill = () => {
+const kiss = (arr) => {
   return [last, first]
 }
