@@ -1,5 +1,5 @@
 const id = (arg) => {
-  return id
+  return arg
 }
 const getLength = (arg) => {
   return arg.length
