@@ -4,6 +4,6 @@ const first = (arg) => {
 const last = (arg) => {
   return arg.charAt(-1)
 }
-const kiss = (arg) => {
+const kiss = () => {
   return [last, first]
 }
