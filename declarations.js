@@ -5,16 +5,17 @@ const obj = {
   num: 69,
   bool: true,
   undef: undefined,
-
 }
 const nested =  {
   arr: [4, undefined, '2'],
     obj: {
-    str: str,
-      num: num,
-      bool: bool
+    str: "Hello word",
+      num: 65,
+      bool: false
   }
 }
 Object.freeze(nested)
 Object.freeze(nested.arr)
 Object.freeze(nested.obj)
+Object.freeze(obj)
+Object.freeze(arr)
