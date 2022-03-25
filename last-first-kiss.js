@@ -2,8 +2,8 @@ const first = (arg) => {
   return arg[0]
 }
 const last = (arg) => {
-  return arg[arr.length-1]
+  return arg[arg.length-1]
 }
-const kiss = () => {
-  return [last, first]
+const kiss = (arg) => {
+  return [arg[arg.length-1], arg[0]]
 }
