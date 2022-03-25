@@ -1,11 +1,11 @@
-is.num = (arg) => typeof arg === 'number'
-is.nan = (arg) => is.num(arg)
-is.str = (arg) => typeof arg === 'string'
-is.bool = (arg) => typeof arg === 'boolean'
-is.undef = (arg) => arg === undefined
-is.def = (arg) => arg !== undefined
-is.arr = (arg) => Array.isArray(arg)
-is.obj = (arg) => typeof arg === 'object' && !is.arr(arg) && arg !== null
-is.fun = (arg) => typeof arg === 'function'
-is.truthy = (arg) => !!arg
-is.falsy = (arg) => !arg
+is.num = (num) => typeof num === 'number';
+is.nan = (nan) => Number.isNaN(nan);
+is.str = (str) => typeof str === 'string';
+is.bool = (bool) => typeof bool === 'boolean';
+is.undef = (undf) => undf === undefined;
+is.def = (defn) => !is.undef(defn);
+is.arr = (arr) => Array.isArray(arr);
+is.obj = (obj) => typeof obj === 'object' && !is.arr(obj) && obj !== null;
+is.fun = (func) => typeof func === 'function';
+is.truthy = (truth) => !!truth;
+is.falsy = (falth) => !falth;
