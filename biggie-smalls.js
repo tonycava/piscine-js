@@ -1,2 +1,2 @@
-const smalls = Number.MIN_SAFE_INTEGER
-const biggie = Number.MAX_SAFE_INTEGER
+const smalls = Number.NEGATIVE_INFINITY
+const biggie = Number.POSITIVE_INFINITY
