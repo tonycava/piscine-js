@@ -1,3 +1,3 @@
 const concatStr = (str, int) => {
-  return str.concat(int)
+  return `${str}${int}`
 }
