@@ -11,6 +11,5 @@ const whisper = (arg) => {
   return '*' + arg.toLowerCase() + '*'
 }
 const sentence = (arg) => {
-  return arg.join('')
+  return arg.join(' ')
 }
-console.log(capitalize('HEY'))
