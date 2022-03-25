@@ -5,6 +5,7 @@ const obj = {
   num: 69,
   bool: true,
   undef: undefined,
+
 }
 const nested =  {
   arr: [4, undefined, '2'],
@@ -14,6 +15,6 @@ const nested =  {
       bool: bool
   }
 }
-Object.freeze( nested)
-Object.freeze(arr)
-Object.freeze(obj)
+Object.freeze(nested)
+Object.freeze(nested.arr)
+Object.freeze(nested.obj)
