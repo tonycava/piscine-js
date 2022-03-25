@@ -8,9 +8,9 @@ const obj = {
   nested: {
     arr: [4, undefined, '2'],
     obj: {
-      str,
-      num,
-      bool
+      str: str,
+      num: num,
+      bool: bool
     }
   }
 }
