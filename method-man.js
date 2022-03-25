@@ -1,5 +1,5 @@
 const words = (arg) => {
-  return Array.from(arg)
+  return arg.split('')
 }
 const yell = (arg) => {
   return arg.toUpperCase()
@@ -13,3 +13,4 @@ const whisper = (arg) => {
 const sentence = (arg) => {
   return arg.join('')
 }
+console.log(words('hey'))
