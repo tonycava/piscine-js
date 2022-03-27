@@ -1,8 +1,9 @@
 let str2 = ""
+let i = 0
 const repeat = (str, num) => {
-  if (num === 10) return 'babababababababababa'
-  for (let i = 0; i < num; i++) {
+  while (i < num) {
     str2 += str
+    i++
   }
   return str2
 }
