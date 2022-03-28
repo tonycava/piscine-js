@@ -24,8 +24,10 @@ const indexOf = (arr, elem, end) => {
   return -1
 }
 const lastIndexOf = (arr, elem, end) => {
-  let actual
+  if (!arr instanceof Array) return -1
+  if (elem === {}) return -1
 
+  let actual
   let myBool = false
 
   if (end === undefined) {
@@ -36,7 +38,7 @@ const lastIndexOf = (arr, elem, end) => {
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] === elem) actual = i
     }
-    return actual
+    return actual ? actual : -1
   }
 
   if (!myBool) {
@@ -46,5 +48,6 @@ const lastIndexOf = (arr, elem, end) => {
       }
     }
   }
-  return -1
+  console.log(actual)
+  if (actual === undefined) return -1
 }
