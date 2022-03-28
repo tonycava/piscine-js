@@ -59,13 +59,31 @@ const divide = (a, b) => {
 }
 const modulo = (a, b) => {
   let old = 0
-  if (a < b) return a
-  if (b < 0) b = -b
+  let myBool = true
 
-  if (b < a) {
+  if (a < 0) {
+    myBool = false
+    a = -a
     while (true) {
       old = old + b
-      if (old > a) return  a - (old - b)
+      console.log(old)
+      if (old > a) {
+        let result = a - (old - b)
+        return -result
+      }
+    }
+  }
+
+  if (b < 0) {
+    return a
+  }
+
+  if (myBool) {
+    while (true) {
+      old = old + b
+      console.log(old)
+      if (old > a) return a - (old - b)
     }
   }
 }
+console.log(modulo(123, -22))
