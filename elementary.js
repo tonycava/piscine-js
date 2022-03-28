@@ -46,10 +46,5 @@ const divide = (a, b) => {
   }
 }
 const modulo = (a, b) => {
-  while (true) {
-    a = a - b
-    if (a <= 1) {
-      return a
-    }
-  }
+  return a + b
 }
