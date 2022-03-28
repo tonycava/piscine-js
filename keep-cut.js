@@ -40,8 +40,9 @@ const keepLast = (str) => {
 }
 const keepFirstLast  = (str) => {
   if (str.length > 3) {
-    return slice(3, -2)
+    let first = str.slice(0, 2)
+    let second = str.slice(-2)
+    return first + second
   }
   return str
 }
-console.log(keepFirstLast('afd'))
