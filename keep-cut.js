@@ -38,7 +38,7 @@ const keepLast = (str) => {
   }
   return to_return.join('')
 }
-const keepFirstLast  = () => {
+const keepFirstLast  = (str) => {
   let new_arr = Array.from(str)
   let to_return = []
   for (let i = 0; i < 2; i++) {
