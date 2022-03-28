@@ -8,7 +8,7 @@ const multiply = (a, b) => {
   }
 
   if (b < 0) {
-    b = b * -1
+    b = -b
     for (let i = 0; i < b; i++) {
       result += a
     }
@@ -20,18 +20,18 @@ const divide = (a, b) => {
   let result = 0
 
   if (a <= 0) {
-    a = a * -1
+    a = -a
     myBool = false
   }
   if (b <= 0) {
-    b = b * -1
+    b = -a
     myBool = false
   }
 
   if (myBool) {
     while (true) {
       if (a <= 1) return result
-      a = a - b
+      a = -a
       result++
     }
   }
@@ -47,7 +47,7 @@ const modulo = (a, b) => {
   while (true) {
     a = a - b
     if (a <= 1) {
-      return a * -1 / 2
+      return a
     }
   }
 }
