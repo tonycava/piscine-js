@@ -1,15 +1,23 @@
 const split = (string, arg) => {
   let arr = []
   let str = ''
+  let again = 0
 
-  for (let i = 0; i < string.length; i++) {
-    if (arg === string[i]) {
-      arr.push(str)
-      str = ''
+  const index2 = [...string.matchAll(arg)]
+
+  for (let i = 0; i < index2.length; i++) {
+    for (let j = again; j < string.length; j++) {
+      if (j === index2[i].index) {
+        arr.push(str)
+        again = arr.length + arg.length + 2
+        str = ''
+        break
+      }
+      str += string[j]
     }
-    if (string[i] !== arg) {
-      str += string[i]
-    }
+  }
+  for (let i = index2[index2.length - 1].index + arg.length; i < string.length; i++) {
+    str += string[i]
   }
   arr.push(str)
   return arr
@@ -22,4 +30,4 @@ const join = (arr, arg) => {
   }
   return myStr
 }
-console.log(split('a b c', ' '))
+console.log(split('ggg - ddd - b', ' - '))
