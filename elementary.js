@@ -63,6 +63,13 @@ const modulo = (a, b) => {
   if (a < 0 && b < 0) {
     a = -a
     b = -b
+    while (true) {
+      old = old + b
+      if (old > a) {
+        let result = a - (old - b)
+        return -result
+      }
+    }
   }
 
   if (a < 0) {
