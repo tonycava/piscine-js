@@ -44,8 +44,10 @@ const keepFirstLast  = (str) => {
   for (let i = 0; i < 2; i++) {
     to_return.push(new_arr[i])
   }
-  for (let i = 1; i > -2; i--) {
-    to_return.push(new_arr[new_arr.length - 1 - i])
+  if (str.length > 2) {
+    for (let i = 1; i > -2; i--) {
+      to_return.push(new_arr[new_arr.length - 1 - i])
+    }
   }
   return to_return.join('')
 }
