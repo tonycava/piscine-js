@@ -2,6 +2,13 @@ const slice = (str, start, end) => {
   let arrStr = Array.from(str)
   let arrSlice = []
 
+  if (start === 0 && end > 0) {
+    for (let i = start; i <  end ; i++) {
+      arrSlice.push(arrStr[i])
+    }
+    return arrSlice.join('')
+  }
+
   if (end < 0) {
     for (let i = start; i <  (arrStr.length + end) ; i++) {
       arrSlice.push(arrStr[i])
