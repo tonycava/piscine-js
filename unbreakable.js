@@ -3,9 +3,7 @@ const split = (string, arg) => {
   let arr = []
   let str = ''
   let again = 0
-
   const index2 = [...string.matchAll(arg)]
-
   for (let i = 0; i < index2.length; i++) {
     for (let j = again; j < string.length; j++) {
       if (j === index2[i].index) {
@@ -29,8 +27,5 @@ const join = (arr, arg) => {
     myStr += arr[i]
     myStr += arg
   }
-  return myStr
+  return myStr.substring(0, myStr.length - 1);
 }
-console.log(split('ggg - ddd - b', ' - '))
-console.log(split('a b c', ' '))
-console.log(split('ee,ff,g,', ','))
