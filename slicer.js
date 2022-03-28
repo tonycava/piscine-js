@@ -1,4 +1,4 @@
-const slicer = (str, start, end) => {
+const slice = (str, start, end) => {
   let arrStr = Array.from(str)
   let arrSlice = []
 
