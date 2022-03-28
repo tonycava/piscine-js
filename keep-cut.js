@@ -47,5 +47,5 @@ const keepFirstLast  = () => {
   for (let i = 1; i > -2; i--) {
     to_return.push(new_arr[new_arr.length - 1 - i])
   }
-  return to_return
+  return to_return.join('')
 }
