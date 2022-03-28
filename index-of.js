@@ -2,6 +2,7 @@ const indexOf = (arr, elem, end) => {
   if (!arr instanceof Array) return -1
   if (elem === {}) return -1
 
+
   let myBool = false
   if (end === undefined) {
     myBool = true
@@ -19,7 +20,7 @@ const indexOf = (arr, elem, end) => {
         return i
       }
     }
-    return -1
   }
+  return -1
 }
-console.log(indexOf(['t', 0, 0, 't'], 't', 1))
+console.log(indexOf('bigArray', {}))
