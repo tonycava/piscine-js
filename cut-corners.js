@@ -9,11 +9,13 @@ const round = (num) => {
 
 }
 const ceil = (num) => {
+  if (num === 0) return 0
   if (num < 0) {
     return -(my_parse_int(-num))
   }
   return my_parse_int(num + 1)
 }
+
 const floor = (num) => {
   if (num < 0) {
     return -(my_parse_int(-num)) - 1
