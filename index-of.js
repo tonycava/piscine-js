@@ -23,4 +23,11 @@ const indexOf = (arr, elem, end) => {
   }
   return -1
 }
-console.log(indexOf('bigArray', {}))
+const lastIndexOf = (arr, elem) => {
+  let actual
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === elem) actual = i
+  }
+  return actual
+}
+console.log(lastIndexOf([1, 2, 3, 4, 5, 4, 3, 2, 1], 2))
