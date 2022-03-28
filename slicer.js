@@ -3,6 +3,7 @@ const slice = (str, start, end) => {
   let arrSlice = []
 
   if (start < 0 && end < 0) {
+
     let newStr = ''
     for (let i = str.length + start; i < str.length + end; i++) {
       newStr += str[i]
@@ -33,9 +34,18 @@ const slice = (str, start, end) => {
   }
 
   if (end === undefined) {
-    for (let i = start; i <  arrStr.length ; i++) {
-      arrSlice.push(arrStr[i])
+    if (str instanceof Array) {
+      for (let i = start; i < arrStr.length; i++) {
+        arrSlice.push(arrStr[i])
+      }
+      return arrSlice
+
+    } else {
+      for (let i = start; i < arrStr.length; i++) {
+        arrSlice.push(arrStr[i])
+      }
+      return arrSlice.join('')
     }
-    return arrSlice.join('')
   }
 }
+console.log(slice([1, 2, 3, 4, 5, 6], 2))
