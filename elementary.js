@@ -57,4 +57,12 @@ const divide = (a, b) => {
     }
   }
 }
-console.log(divide(-123, -22))
+const modulo = (a, b) => {
+  if (a < b) return a
+  if (a > b) return a
+
+  if (b < a) {
+    console.log('tdhcgb')
+  }
+}
+console.log(modulo(34, 78))
