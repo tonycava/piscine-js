@@ -20,3 +20,12 @@ const cutFirstLast = (str) => {
   let first = cutFirst(str)
   return cutLast(first)
 }
+const keepFirst = (str) => {
+  let new_arr = Array.from(str)
+  let to_return = []
+
+  for (let i = 0; i < 1; i++) {
+    to_return.push(new_arr[i])
+  }
+  return to_return.join('')
+}
