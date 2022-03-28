@@ -8,6 +8,15 @@ const slice = (str, start, end) => {
     }
     return arrSlice.join('')
   }
+
+  if (start < 0) {
+    for (let i = 1; i > start; i--) {
+      console.log(i)
+      arrSlice.push(arrStr[arrStr.length-i-1])
+    }
+    return arrSlice.join('')
+  }
+
   if (end === undefined) {
     for (let i = start; i <  arrStr.length ; i++) {
       arrSlice.push(arrStr[i])
