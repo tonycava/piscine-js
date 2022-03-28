@@ -6,12 +6,12 @@ const slicer = (str, start, end) => {
     for (let i = start; i <  (arrStr.length + end) ; i++) {
       arrSlice.push(arrStr[i])
     }
-    return arrSlice
+    return arrSlice.join('')
   }
   if (end === undefined) {
     for (let i = start; i <  arrStr.length ; i++) {
       arrSlice.push(arrStr[i])
     }
-    return arrSlice
+    return arrSlice.join('')
   }
 }
