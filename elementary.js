@@ -17,13 +17,14 @@ const multiply = (a, b) => {
   }
 }
 const divide = (a, b) => {
-  if (b > a) return 0
   let myBool = true
   let result = 0
+
   if (a <= 0) {
     a = -a
     myBool = false
   }
+
   if (b <= 0) {
     b = -a
     myBool = false
@@ -32,19 +33,17 @@ const divide = (a, b) => {
   if (myBool) {
     while (true) {
       a = a - b
-      if (a <= 1) return result
+      if (a < 0) return result
       result++
     }
   }
 
   if (!myBool) {
     while (true) {
-      if (a <= 1) return -result
       a = a - b
+      if (a < 0) return -result
       result++
     }
   }
 }
-const modulo = (a, b) => {
-  return a + b
-}
+console.log(divide(-5, 5))
