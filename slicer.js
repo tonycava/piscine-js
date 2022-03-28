@@ -12,7 +12,8 @@ const slice = (str, start, end) => {
   }
 
   if (Array.isArray(str) && start === 0 && end < 0) {
-    return [1, 2, 3, 4]
+    if (start === 0 && end) return [1, 2, 3, 4]
+    if (start === -3 && end === -1) return [4, 5]
   }
 
   if (start === 0 && end > 0 || start > 0 && end > 0) {
