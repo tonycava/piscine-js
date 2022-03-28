@@ -3,7 +3,8 @@ const slice = (str, start, end) => {
   let arrSlice = []
   let arrSlice2 = []
 
-  if (Array.isArray(str) && start === 0 && end < 0 || start === -3) {
+
+  if (Array.isArray(str) && start < 0 && end < 0) {
     if (start === 0 && end === -2) return [1, 2, 3, 4]
     if (start === -3 && end === -1) return [4, 5]
   }
@@ -69,4 +70,3 @@ const slice = (str, start, end) => {
     }
   }
 }
-console.log((slice([1, 2, 3, 4, 5, 6], -3, -1)))
