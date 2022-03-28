@@ -24,8 +24,17 @@ const keepFirst = (str) => {
   let new_arr = Array.from(str)
   let to_return = []
 
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < 2; i++) {
     to_return.push(new_arr[i])
+  }
+  return to_return.join('')
+}
+const keepLast = (str) => {
+  let new_arr = Array.from(str)
+  let to_return = []
+
+  for (let i = 1; i > -2; i--) {
+    to_return.push(new_arr[new_arr.length - 1 - i])
   }
   return to_return.join('')
 }
