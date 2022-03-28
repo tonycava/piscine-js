@@ -4,6 +4,12 @@ const slice = (str, start, end) => {
   let arrSlice2 = []
 
   if (start < 0 && end < 0) {
+    if (str instanceof Array) {
+      for (let i = str.length + start; i < str.length + end; i++) {
+        arrSlice.push(str[i])
+      }
+      return arrSlice
+    }
 
     let newStr = ''
     for (let i = str.length + start; i < str.length + end; i++) {
