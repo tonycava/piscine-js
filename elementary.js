@@ -16,7 +16,6 @@ const multiply = (a, b) => {
     return -result
   }
 }
-console.log(multiply(34, 78))
 const divide = (a, b) => {
   let myBool = true
   let result = 0
