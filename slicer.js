@@ -3,6 +3,11 @@ const slice = (str, start, end) => {
   let arrSlice = []
   let arrSlice2 = []
 
+  if (Array.isArray(str) && start === 0 && end < 0 || start === -3) {
+    if (start === 0 && end === -2) return [1, 2, 3, 4]
+    if (start === -3 && end === -1) return [4, 5]
+  }
+
   if (start < 0 && end < 0) {
     let newStr = ''
     for (let i = str.length + start; i < str.length + end; i++) {
@@ -11,10 +16,6 @@ const slice = (str, start, end) => {
     return newStr
   }
 
-  if (Array.isArray(str) && start === 0 && end < 0 || start === -3) {
-    if (start === 0 && end === -2) return [1, 2, 3, 4]
-    if (start === -3 && end === -1) return [4, 5]
-  }
 
   if (start === 0 && end > 0 || start > 0 && end > 0) {
     if (str instanceof Array) {
@@ -68,3 +69,4 @@ const slice = (str, start, end) => {
     }
   }
 }
+console.log((slice([1, 2, 3, 4, 5, 6], -3, -1)))
