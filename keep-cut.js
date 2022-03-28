@@ -16,3 +16,7 @@ const cutLast = (str) => {
   }
   return to_return.join('')
 }
+const cutFirstLast = (str) => {
+  let first = cutFirst(str)
+  return cutLast(first)
+}
