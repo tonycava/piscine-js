@@ -5,10 +5,16 @@ const slice = (str, start, end) => {
   if (start < 0 && end < 0) {
     let newStr = ''
     for (let i = str.length + start; i < str.length + end; i++) {
-      console.log(i)
       newStr += str[i]
     }
     return newStr
+  }
+
+  if (start === 0 && end > 0 || start > 0 && end > 0) {
+    for (let i = start; i < end; i++) {
+      arrSlice.push(arrStr[i])
+    }
+    return arrSlice.join('')
   }
 
   if (end < 0) {
@@ -33,4 +39,3 @@ const slice = (str, start, end) => {
     return arrSlice.join('')
   }
 }
-console.log(slice('abcdef', -3, -1))
