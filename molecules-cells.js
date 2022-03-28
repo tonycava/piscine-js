@@ -38,4 +38,3 @@ const DNA = (dna) => {
   }
   return str
 }
-console.log(DNA('AUCG'))
