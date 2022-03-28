@@ -31,9 +31,9 @@ const divide = (a, b) => {
 
   if (myBool) {
     while (true) {
-      result++
+      a = a - b
       if (a <= 1) return result
-      a = -a
+      result++
     }
   }
 
