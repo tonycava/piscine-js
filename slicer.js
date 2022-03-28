@@ -2,16 +2,17 @@ const slice = (str, start, end) => {
   let arrStr = Array.from(str)
   let arrSlice = []
 
-
-  if (start === 0 && end > 0 || start > 0 && end > 0) {
-    for (let i = start; i <  end ; i++) {
-      arrSlice.push(arrStr[i])
+  if (start < 0 && end < 0) {
+    let newStr = ''
+    for (let i = str.length + start; i < str.length + end; i++) {
+      console.log(i)
+      newStr += str[i]
     }
-    return arrSlice.join('')
+    return newStr
   }
 
   if (end < 0) {
-    for (let i = start; i <  (arrStr.length + end) ; i++) {
+    for (let i = start; i < (arrStr.length + end); i++) {
       arrSlice.push(arrStr[i])
     }
     return arrSlice.join('')
@@ -32,3 +33,4 @@ const slice = (str, start, end) => {
     return arrSlice.join('')
   }
 }
+console.log(slice('abcdef', -3, -1))
