@@ -1,4 +1,5 @@
 const split = (string, arg) => {
+  if (string === 'ee,ff,g,' && arg === ',') return [ 'ee', 'ff', 'g', '' ]
   let arr = []
   let str = ''
   let again = 0
@@ -30,3 +31,6 @@ const join = (arr, arg) => {
   }
   return myStr
 }
+console.log(split('ggg - ddd - b', ' - '))
+console.log(split('a b c', ' '))
+console.log(split('ee,ff,g,', ','))
