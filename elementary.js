@@ -17,6 +17,7 @@ const multiply = (a, b) => {
   }
 }
 const divide = (a, b) => {
+  if (a === 0 || b === 0) return 0
   let myBool = true
   let result = 0
 
@@ -26,7 +27,7 @@ const divide = (a, b) => {
   }
 
   if (b <= 0) {
-    b = -a
+    b = -b
     myBool = false
   }
 
@@ -46,4 +47,3 @@ const divide = (a, b) => {
     }
   }
 }
-console.log(divide(-5, 5))
