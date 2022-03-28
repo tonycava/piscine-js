@@ -66,7 +66,6 @@ const modulo = (a, b) => {
     a = -a
     while (true) {
       old = old + b
-      console.log(old)
       if (old > a) {
         let result = a - (old - b)
         return -result
@@ -75,13 +74,19 @@ const modulo = (a, b) => {
   }
 
   if (b < 0) {
-    return a
+    myBool = false
+    b = -b
+    while (true) {
+      old = old + b
+      if (old > a) {
+        return a - (old - b)
+      }
+    }
   }
 
   if (myBool) {
     while (true) {
       old = old + b
-      console.log(old)
       if (old > a) return a - (old - b)
     }
   }
