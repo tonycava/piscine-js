@@ -17,9 +17,9 @@ const multiply = (a, b) => {
   }
 }
 const divide = (a, b) => {
+  if (b > a) return 0
   let myBool = true
   let result = 0
-
   if (a <= 0) {
     a = -a
     myBool = false
