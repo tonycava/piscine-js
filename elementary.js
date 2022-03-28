@@ -60,6 +60,10 @@ const divide = (a, b) => {
 const modulo = (a, b) => {
   let old = 0
   let myBool = true
+  if (a < 0 && b < 0) {
+    a = -a
+    b = -b
+  }
 
   if (a < 0) {
     myBool = false
@@ -91,4 +95,4 @@ const modulo = (a, b) => {
     }
   }
 }
-console.log(modulo(123, -22))
+console.log(modulo(-123, -22))
