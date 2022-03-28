@@ -8,20 +8,15 @@ const indexOf = (arr, elem, end) => {
       if (arr[i] === elem) return i
     }
   }
+
   if (!myBool) {
-    for (let i = 0; i < end; i++) {
-      if (arr[i] === elem) return i
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === elem && i + 1 !== end) {
+        return i
+      }
     }
+    return -1
   }
-  return -1
 }
-const lastIndexOf = (arr, elem, end) => {
-  return true
-}
-const includes = (arr, elem) => {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === elem) return true
-  }
-  return false
-}
-console.log(lastIndexOf([1, 2, 3, 't'], '4', ))
+console.log(indexOf(['t', 0, 0, 't'], 't', 1))
