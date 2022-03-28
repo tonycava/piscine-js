@@ -27,5 +27,6 @@ const join = (arr, arg) => {
     myStr += arr[i]
     myStr += arg
   }
-  return myStr.substring(0, myStr.length - 1);
+  return myStr.substring(0, myStr.length - arg.length);
 }
+console.log(join(['ggg', 'ddd', 'b'], ' - '))
