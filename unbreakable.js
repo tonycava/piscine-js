@@ -2,11 +2,11 @@ const split = (string, arg) => {
   let arr = []
   let str = ''
   for (let i = 0; i < string.length; i++) {
-    str += string[i]
     if (arg === string[i]) {
       arr.push(str)
       str = ''
     }
+    str += string[i]
   }
   arr.push(str)
   return arr
@@ -19,4 +19,4 @@ const join = (arr, arg) => {
   }
   return myStr
 }
-console.log(join([1, 2, 3], '&'))
+console.log(split('a b c', ' '))
