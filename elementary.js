@@ -58,13 +58,14 @@ const divide = (a, b) => {
   }
 }
 const modulo = (a, b) => {
-  let old = b
+  let old = 0
   if (a < b) return a
 
   if (b < a) {
     while (true) {
       old = old + b
-      if (old > b) return a - old
+      console.log(old)
+      if (old > a) return  a - (old - b)
     }
   }
 }
