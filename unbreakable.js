@@ -9,7 +9,7 @@ const split = (string, arg) => {
     for (let j = again; j < string.length; j++) {
       if (j === index2[i].index) {
         arr.push(str)
-        again = arr.length + arg.length + 2
+        again = arr[0].length + arg.length
         str = ''
         break
       }
@@ -30,4 +30,3 @@ const join = (arr, arg) => {
   }
   return myStr
 }
-console.log(split('ggg - ddd - b', ' - '))
