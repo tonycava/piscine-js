@@ -1,12 +1,15 @@
 const split = (string, arg) => {
   let arr = []
   let str = ''
+
   for (let i = 0; i < string.length; i++) {
     if (arg === string[i]) {
       arr.push(str)
       str = ''
     }
-    str += string[i]
+    if (string[i] !== arg) {
+      str += string[i]
+    }
   }
   arr.push(str)
   return arr
