@@ -51,3 +51,9 @@ const lastIndexOf = (arr, elem, end) => {
   console.log(actual)
   if (actual === undefined) return -1
 }
+const includes = (arr, elem) => {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === elem) return true
+  }
+  return false
+}
