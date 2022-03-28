@@ -2,7 +2,8 @@ const slice = (str, start, end) => {
   let arrStr = Array.from(str)
   let arrSlice = []
 
-  if (start === 0 && end > 0) {
+
+  if (start === 0 && end > 0 || start > 0 && end > 0) {
     for (let i = start; i <  end ; i++) {
       arrSlice.push(arrStr[i])
     }
