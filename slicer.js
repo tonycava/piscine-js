@@ -13,6 +13,14 @@ const slice = (str, start, end) => {
   }
 
   if (start === 0 && end > 0 || start > 0 && end > 0) {
+    if (str instanceof Array) {
+      for (let i = start; i < end; i++) {
+        arrSlice.push(arrStr[i])
+      }
+      return arrSlice
+    }
+
+
     for (let i = start; i < end; i++) {
       arrSlice.push(arrStr[i])
     }
@@ -59,3 +67,4 @@ const slice = (str, start, end) => {
     }
   }
 }
+console.log(slice([1, 2, 3, 4, 5, 6], 0, 2))
