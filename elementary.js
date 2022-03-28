@@ -31,11 +31,12 @@ const divide = (a, b) => {
 
   if (myBool) {
     while (true) {
+      result++
       if (a <= 1) return result
       a = -a
-      result++
     }
   }
+
   if (!myBool) {
     while (true) {
       if (a <= 1) return -result
