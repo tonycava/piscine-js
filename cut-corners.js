@@ -21,9 +21,8 @@ const floor = (num) => {
   return my_parse_int(num)
 }
 const trunc  = (num) => {
-  if (num <= 0) {
+  if (num < 0) {
     return -(my_parse_int(-num))
   }
   return my_parse_int(num)
 }
-console.log(round(-10.5))
