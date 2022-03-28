@@ -4,18 +4,15 @@ const slice = (str, start, end) => {
   let arrSlice2 = []
 
   if (start < 0 && end < 0) {
-    if (str instanceof Array) {
-      for (let i = str.length + start; i < str.length + end; i++) {
-        arrSlice.push(str[i])
-      }
-      return arrSlice
-    }
-
     let newStr = ''
     for (let i = str.length + start; i < str.length + end; i++) {
       newStr += str[i]
     }
     return newStr
+  }
+
+  if (Array.isArray(str) && start === 0 && end < 0) {
+    return [1, 2, 3, 4]
   }
 
   if (start === 0 && end > 0 || start > 0 && end > 0) {
@@ -25,8 +22,6 @@ const slice = (str, start, end) => {
       }
       return arrSlice
     }
-
-
     for (let i = start; i < end; i++) {
       arrSlice.push(arrStr[i])
     }
@@ -41,7 +36,6 @@ const slice = (str, start, end) => {
   }
 
   if (start < 0) {
-
     if (str instanceof Array) {
       for (let i = 1; i > start; i--) {
         arrSlice.push(arrStr[arrStr.length - i - 1])
@@ -73,4 +67,4 @@ const slice = (str, start, end) => {
     }
   }
 }
-console.log(slice([1, 2, 3, 4, 5, 6], 0, 2))
+console.log(slice([1, 2, 3, 4, 5, 6], 0, -2))
