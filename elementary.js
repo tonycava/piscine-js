@@ -21,6 +21,17 @@ const divide = (a, b) => {
   let myBool = true
   let result = 0
 
+  if (a < 0 && b < 0) {
+    a = -a
+    b = -b
+    while (true) {
+
+      a = a - b
+      if (a < 0) return result
+      result++
+    }
+  }
+
   if (a <= 0) {
     a = -a
     myBool = false
@@ -30,8 +41,7 @@ const divide = (a, b) => {
     b = -b
     myBool = false
   }
-
-  if (myBool) {
+    if (myBool) {
     while (true) {
       a = a - b
       if (a < 0) return result
@@ -47,3 +57,4 @@ const divide = (a, b) => {
     }
   }
 }
+console.log(divide(-123, -22))
