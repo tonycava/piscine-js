@@ -18,16 +18,10 @@ const pyramid = (char, len) => {
   for (let i = 0; i < len * 2 - 1; i++) {
     output += char
   }
-  if (char.length === 1) {
-    let outputArr = Array.from(output)
+
+  let outputArr = Array.from(output)
+  for (let i = 0; i < char.length; i++) {
     outputArr.shift()
-    return outputArr.join('')
-  } else if (char.length === 2) {
-    let outputArr = Array.from(output)
-    outputArr.shift()
-    outputArr.shift()
-    return outputArr.join('')
-  } else {
-    return output
   }
+  return outputArr.join('')
 }
