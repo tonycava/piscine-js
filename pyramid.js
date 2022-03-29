@@ -7,16 +7,20 @@ const pyramid = (char, len) => {
     temp += ' '
     if (i === len - count - 1) {
       for (let j = 0; j < count * 2+ 1; j++) {
-        temp += '*'
+        temp += char
       }
       count += 1
       i = 0
       output += temp += '\n'
+
       temp = ''
     }
   }
   for (let i = 0; i < len * 2 -1; i++) {
-    output += '*'
+    output += char
   }
-  return output
+  let outputArr = Array.from(output)
+  outputArr.shift()
+  return outputArr.join('')
 }
+console.log(pyramid('*', 5))
