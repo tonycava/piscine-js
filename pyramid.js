@@ -11,7 +11,7 @@ const pyramid = (char, len) => {
       }
       count += 1
       i = 0
-      output += `${temp}\n`
+      output += temp += '\n'
       temp = ''
     }
   }
