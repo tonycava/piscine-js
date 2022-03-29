@@ -1,9 +1,8 @@
 const vowels = /[aeiouAEIOU]/g
-const paragraph = 'something'
-const found = [...paragraph.matchAll(vowels)];
-let arr = Array.from(paragraph)
+const vowelDots = (str) => {
+  const found = [...str.matchAll(vowels)];
+  let arr = Array.from(str)
 
-const vowelDots = () => {
   if (found !== undefined) {
     for (let i = 0; i < found.length; i++) {
       arr[found[i].index] += `.`
