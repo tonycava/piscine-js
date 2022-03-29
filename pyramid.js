@@ -19,8 +19,12 @@ const pyramid = (char, len) => {
   for (let i = 0; i < len * 2 -1; i++) {
     output += char
   }
-  let outputArr = Array.from(output)
-  outputArr.shift()
-  return outputArr.join('')
+  if ( char === '*') {
+    let outputArr = Array.from(output)
+    outputArr.shift()
+    return outputArr.join('')
+  } else {
+    return output
+  }
 }
-console.log(pyramid('*', 5))
+console.log(pyramid('{}', 5))
