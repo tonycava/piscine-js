@@ -1,6 +1,6 @@
-const regex = /[aeiouAEIOU]/g
+const vowels = /[aeiouAEIOU]/g
 const paragraph = 'something'
-const found = [...paragraph.matchAll(regex)];
+const found = [...paragraph.matchAll(vowels)];
 let arr = Array.from(paragraph)
 
 const vowelDots = () => {
