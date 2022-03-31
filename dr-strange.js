@@ -15,6 +15,9 @@ const addWeek = (date) => {
   }
 }
 
-const timeTravel = (data) => {
-  return data.date
+const timeTravel = ({data, hour, minute, second}) => {
+  data.setHours(hour)
+  data.setMinutes(minute)
+  data.setSeconds(second)
+  return data
 }
