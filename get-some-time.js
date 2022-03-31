@@ -1,30 +1,10 @@
-const firstDayWeek = (week, year) => {
-let offset
-  let d
-  // Jan 1 of 'year'
-  if (year >= "1000") {
-    d = new Date(year, 1, 55)
-  } else {
-    d = new Date(year-1, 1, 55)
-  }
-  offset = d.getTimezoneOffset();
-
-  // ISO: week 1 is the one with the year's first Thursday
-  // so nearest Thursday: current date + 4 - current day number
-  // Sunday is converted from 0 to 7
-  d.setDate(d.getDate() + 4 - (d.getDay() || 7));
-
-  // 7 days * (week - overlapping first week)
-  d.setTime(d.getTime() + 7 * 24 * 60 * 60 * 1000
-    * (week + (year === d.getFullYear() ? -1 : 0 )));
-
-  // daylight savings fix
-  d.setTime(d.getTime()
-    + (d.getTimezoneOffset() - offset) * 60 * 1000);
-
-  // back to Monday (from Thursday)
-  d.setDate(d.getDate() - 3);
-
-  return d;
+const firstDayWeek = (w, y) => {
+  let simple = new Date(y, 0, 1 + (w - 1) * 7);
+  let dow = simple.getDay();
+  let ISOweekStart = simple;
+  if (dow <= 4)
+    ISOweekStart.setDate(simple.getDate() - simple.getDay() + 4);
+  else
+    ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
+  return ISOweekStart;
 }
-console.log(firstDayWeek(1, '1000'))
