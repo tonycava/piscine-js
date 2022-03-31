@@ -1,8 +1,13 @@
 const firstDayWeek = (week, year) => {
-
+let offset
+  let d
   // Jan 1 of 'year'
-  let d = new Date(year-1, 1, 55),
-    offset = d.getTimezoneOffset();
+  if (year >= "1000") {
+    d = new Date(year, 1, 55)
+  } else {
+    d = new Date(year-1, 1, 55)
+  }
+  offset = d.getTimezoneOffset();
 
   // ISO: week 1 is the one with the year's first Thursday
   // so nearest Thursday: current date + 4 - current day number
@@ -22,3 +27,4 @@ const firstDayWeek = (week, year) => {
 
   return d;
 }
+console.log(firstDayWeek(1, '1000'))
