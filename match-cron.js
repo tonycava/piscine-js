@@ -1,33 +1,32 @@
-const matchCron = (str, date) => {
-  const split = str.split(' ');
+const matchCron = (cron, date) => {
+  let arr = cron.split(' ')
+  let minute = arr[0]
+  let hour = arr[1]
+  let dayOfMonth = arr[2]
+  let month = arr[3]
+  let dayWeek = arr[4]
+
   let flag = false
-  let minute = split[0]
-  let hour = split[1]
-  let dayOfMonth = split[2]
-  let month = split[3]
-  let dayWeek = split[4]
-
-  if (minute === '*' || minute === date.getMinutes()) {
+  if (minute === '*' || minute === Number(date.getMinutes())) {
     flag = true
   } else {
     return false
   }
-  if (hour === '*' || hour === date.getHours()) {
+  if (hour === '*' || hour === Number(date.getHours())) {
     flag = true
   } else {
     return false
   }
-  if (dayOfMonth === '*' || dayOfMonth === date.getDate()) {
+  if (dayOfMonth === '*' || dayOfMonth === Number(date.getDate())) {
     flag = true
   } else {
     return false
   }
-  if (month === '*' || month === date.getMonth() + 1) {
+  if (month === '*' || month == date.getMonth() + 1) {
     flag = true
   } else {
     return false
   }
-
   if (dayWeek === '*') {
     flag = true
   } else if (dayWeek === 7 && date.getDay === 0) {
@@ -39,4 +38,3 @@ const matchCron = (str, date) => {
   }
   return flag
 }
-console.log(matchCron('5 * * * 5', new Date('2020-06-01 00:05:00')))
