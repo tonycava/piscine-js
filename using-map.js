@@ -49,7 +49,7 @@ const fahrenheitToCelsius = (data) => {
 const trimTemp = (obj) => {
   let arr = []
   obj.map((item) => {
-    arr.push({city: item.city, temperature: item.temperature.trim()})
+    arr.push({city: item.city, state: item.state, region: item.region, temperature: item.temperature.trim()})
   })
   return arr
 }
@@ -63,5 +63,3 @@ const tempForecasts  = (data) => {
   })
   return str
 }
-const temps = ['86°F', '100°F', '41°F', '55°F', '10°F', '70°F', '-2°F']
-console.log(fahrenheitToCelsius(temps))
