@@ -1,9 +1,10 @@
 const dayOfTheYear = (date) => {
-  if (date.getFullYear() === 1) return '1'
+  if (date.getFullYear() === 1) return 1
   const date1 = date;
   const date2 = new Date(date.getFullYear(), 0, 1)
   const diffTime = Math.abs(date2 - date1);
-  return String(Math.ceil(diffTime / (1000 * 60 * 60 * 24 + 1)))
+  let result = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+  return result + 1
 }
 console.log(dayOfTheYear(new Date('0001-01-01')))
 console.log(dayOfTheYear(new Date('1664-08-09')))
