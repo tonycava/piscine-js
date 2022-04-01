@@ -1,6 +1,5 @@
 const bloodySunday = (date) => {
   const result = date.getDay()
-  return result
   switch (result) {
     case 1:
       return 'Monday'
