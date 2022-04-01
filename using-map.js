@@ -44,9 +44,10 @@ const trimTemp = (obj) => {
 const tempForecasts  = (data) => {
   let arr = []
   data.forEach((item, index) => {
-    let inFunc =  []
+    let inFunc = []
     inFunc.push(data[index].temperature)
     let result = fahrenheitToCelsius(inFunc)
+    result[0] = result[0].slice(0, -2)
     arr.push(result + '°Celsius in ' + item.city + ', ' + upperCasingStates([item.state]))
   })
   return arr
