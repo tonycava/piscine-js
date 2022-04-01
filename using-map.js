@@ -17,9 +17,23 @@ const citiesOnly = (data) => {
   return arr
 }
 const upperCasingStates = (data) => {
+  let split = []
   let arr = []
-  data.map((item) => {
-    arr.push(item.charAt(0).toUpperCase() + item.slice(1))
+  let str = ''
+  data.map((item, index) => {
+    split = data[index].split(' ')
+    console.log(split)
+    if (split.length === 1) {
+      arr.push(item.charAt(0).toUpperCase() + item.slice(1))
+    } else {
+      str = ''
+      split.forEach((item2) => {
+        item2 = item2.charAt(0).toUpperCase() + item2.slice(1)
+        str += ' '
+        str += item2
+      })
+      arr.push(str.trim())
+    }
   })
   return arr
 }
@@ -49,3 +63,15 @@ const tempForecasts  = (data) => {
   })
   return str
 }
+const cities = [
+  'alabama',
+  'new jersey',
+  'alaska',
+  'new york',
+  'california',
+  'new hampshire',
+  'ohio',
+  'texas',
+  'west virginia',
+]
+console.log(upperCasingStates(cities))
