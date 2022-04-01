@@ -49,7 +49,7 @@ const fahrenheitToCelsius = (data) => {
 const trimTemp = (obj) => {
   let arr = []
   obj.map((item) => {
-    arr.push({city: item.city, state: item.state, region: item.region, temperature: item.temperature.trim()})
+    arr.push({city: item.city, state: item.state, region: item.region, temperature: item.temperature.replaceAll(' ', '')})
   })
   return arr
 }
@@ -63,3 +63,56 @@ const tempForecasts  = (data) => {
   })
   return str
 }
+const states = [
+  {
+    city: 'Los Angeles',
+    temperature: '101 °F',
+    state: 'california',
+    region: 'West',
+  },
+  {
+    city: 'San Francisco',
+    temperature: '84 °F',
+    state: 'california',
+    region: 'West',
+  },
+  {
+    city: 'Miami',
+    temperature: ' 112 °F',
+    state: 'Florida',
+    region: 'South',
+  },
+  {
+    city: 'New York City',
+    temperature: ' 0 °F',
+    state: 'new york',
+    region: 'North East',
+  },
+  { city: 'Juneau', temperature: ' 21° F', state: 'Alaska', region: 'West' },
+  {
+    city: 'Boston',
+    temperature: '45 °F',
+    state: 'massachussetts',
+    region: 'North East',
+  },
+  {
+    city: 'Jackson',
+    temperature: ' 70°F  ',
+    state: 'mississippi',
+    region: 'South',
+  },
+  {
+    city: 'Utqiagvik',
+    temperature: ' -1 °F',
+    state: 'Alaska',
+    region: 'West',
+  },
+  {
+    city: 'Albuquerque',
+    temperature: ' 95 °F',
+    state: 'new mexico',
+    region: 'West',
+  },
+]
+
+console.log(trimTemp(states))
