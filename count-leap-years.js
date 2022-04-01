@@ -1,10 +1,8 @@
 const countLeapYears = (date) => {
   let count = 0
-  let years = date.getFullYear()
-  for (let i = 0; i < years; i++) {
-    if (years % 4 === 0 && years % 100 !== 0 || years % 400 === 0) {
-      count++
-    }
+  let year = date.getFullYear()
+  for (let i = 0; i < year; i++) {
+    if ((i & 3) === 0 && ((i % 25) !== 0 || (i & 15) === 0)) count++
   }
-  return count
+  return count - 1
 }
