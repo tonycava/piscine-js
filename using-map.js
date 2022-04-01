@@ -1,14 +1,3 @@
-const citiesOnly2 = ([
-  {
-    city: 'Los Angeles',
-    temperature: '  101 °F   ',
-  },
-  {
-    city: 'San Francisco',
-    temperature: ' 84 ° F   ',
-  },
-])
-
 const citiesOnly = (data) => {
   let arr = []
   data.map((item) => {
@@ -22,7 +11,6 @@ const upperCasingStates = (data) => {
   let str = ''
   data.map((item, index) => {
     split = data[index].split(' ')
-    console.log(split)
     if (split.length === 1) {
       arr.push(item.charAt(0).toUpperCase() + item.slice(1))
     } else {
@@ -54,12 +42,12 @@ const trimTemp = (obj) => {
   return arr
 }
 const tempForecasts  = (data) => {
-  let str = []
+  let arr = []
   data.forEach((item, index) => {
     let inFunc =  []
     inFunc.push(data[index].temperature)
     let result = fahrenheitToCelsius(inFunc)
     arr.push(result + '°Celsius in ' + item.city + ', ' + upperCasingStates([item.state]))
   })
-  return str
+  return arr
 }
