@@ -42,7 +42,7 @@ const fahrenheitToCelsius = (data) => {
   data.map((item) => {
     let number = Number(item.slice(0, -2))
     let result = (number - 32) / 1.8
-    arr.push(Math.floor(result))
+    arr.push(Math.floor(result) + '°C'.trim())
   })
   return arr
 }
@@ -63,15 +63,5 @@ const tempForecasts  = (data) => {
   })
   return str
 }
-const cities = [
-  'alabama',
-  'new jersey',
-  'alaska',
-  'new york',
-  'california',
-  'new hampshire',
-  'ohio',
-  'texas',
-  'west virginia',
-]
-console.log(upperCasingStates(cities))
+const temps = ['86°F', '100°F', '41°F', '55°F', '10°F', '70°F', '-2°F']
+console.log(fahrenheitToCelsius(temps))
