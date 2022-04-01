@@ -54,65 +54,12 @@ const trimTemp = (obj) => {
   return arr
 }
 const tempForecasts  = (data) => {
-  let str = ''
+  let str = []
   data.forEach((item, index) => {
     let inFunc =  []
     inFunc.push(data[index].temperature)
     let result = fahrenheitToCelsius(inFunc)
-    str += result + '°Celsius in ' + item.city + ', ' + upperCasingStates([item.state])
+    arr.push(result + '°Celsius in ' + item.city + ', ' + upperCasingStates([item.state]))
   })
   return str
 }
-const states = [
-  {
-    city: 'Los Angeles',
-    temperature: '101 °F',
-    state: 'california',
-    region: 'West',
-  },
-  {
-    city: 'San Francisco',
-    temperature: '84 °F',
-    state: 'california',
-    region: 'West',
-  },
-  {
-    city: 'Miami',
-    temperature: ' 112 °F',
-    state: 'Florida',
-    region: 'South',
-  },
-  {
-    city: 'New York City',
-    temperature: ' 0 °F',
-    state: 'new york',
-    region: 'North East',
-  },
-  { city: 'Juneau', temperature: ' 21° F', state: 'Alaska', region: 'West' },
-  {
-    city: 'Boston',
-    temperature: '45 °F',
-    state: 'massachussetts',
-    region: 'North East',
-  },
-  {
-    city: 'Jackson',
-    temperature: ' 70°F  ',
-    state: 'mississippi',
-    region: 'South',
-  },
-  {
-    city: 'Utqiagvik',
-    temperature: ' -1 °F',
-    state: 'Alaska',
-    region: 'West',
-  },
-  {
-    city: 'Albuquerque',
-    temperature: ' 95 °F',
-    state: 'new mexico',
-    region: 'West',
-  },
-]
-
-console.log(trimTemp(states))
