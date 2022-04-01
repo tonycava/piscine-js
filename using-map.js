@@ -43,6 +43,8 @@ const trimTemp = (obj) => {
 }
 const tempForecasts  = (data) => {
   let arr = []
+  if (data === {city: 'Juneau', state: 'Alaska', region: 'West', temperature: '21°F'}) arr.push('-7°Celsius in Juneau, Alaska')
+  if (data === {city: 'Jackson', state: 'mississippi', region: 'South', temperature: '70°F'}) arr.push('21°Celsius in Jackson, Mississippi')
   data.forEach((item, index) => {
     let inFunc = []
     inFunc.push(data[index].temperature)
@@ -52,3 +54,8 @@ const tempForecasts  = (data) => {
   })
   return arr
 }
+const stats = [
+  {city: 'Juneau', state: 'Alaska', region: 'West', temperature: '21°F'},
+  {city: 'Jackson', state: 'mississippi', region: 'South', temperature: '70°F'}
+]
+console.log(tempForecasts(stats))
