@@ -5,19 +5,19 @@ const matchCron = (cron, date) => {
   let dayOfMonth = arr[2]
   let month = arr[3]
   let dayWeek = arr[4]
-
+  // console.log(date.getDay()+1)
   let flag = false
-  if (minute === '*' || minute === Number(date.getMinutes())) {
+  if (minute === '*' || minute == date.getMinutes()) {
     flag = true
   } else {
     return false
   }
-  if (hour === '*' || hour === Number(date.getHours())) {
+  if (hour === '*' || hour == date.getHours()) {
     flag = true
   } else {
     return false
   }
-  if (dayOfMonth === '*' || dayOfMonth === Number(date.getDate())) {
+  if (dayOfMonth === '*' || dayOfMonth == date.getDate()) {
     flag = true
   } else {
     return false
