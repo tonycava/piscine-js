@@ -49,7 +49,7 @@ const fahrenheitToCelsius = (data) => {
 const trimTemp = (obj) => {
   let arr = []
   obj.map((item) => {
-    arr.push({city: item.city, state: item.state, region: item.region, temperature: item.temperature.replaceAll(' ', '')})
+    arr.push({city: item.city, state: item.state, region: item.region, temperature: item.temperature.replace(/ /g,'')})
   })
   return arr
 }
