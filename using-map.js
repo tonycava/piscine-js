@@ -41,28 +41,14 @@ const trimTemp = (obj) => {
   })
   return arr
 }
-const tempForecasts = (states) => {
-  return states.map(all => {
-    const regex = /\s/g
-    const resRegex = new RegExp(regex)
-    const regexSpace = /\s\w/g
-    const regexSp = new RegExp(regexSpace)
-    let strin = all.temperature
-    let res2 = all.state.match(regexSp)
-    let str = strin.match(resRegex)
-    // let res3 = all.state.match(regexSp)
-    let res = strin.replace(resRegex, '')
-    if (res2 !== null) {
-      all.state = all.state.replace(regexSp, res2[0].toUpperCase())
-    }
-    res = parseInt(res)
-    let cel = (res - 32) * 5 / 9
-    cel = Math.floor(cel)
-    return cel + '°Celsius in ' + all.city + ', ' + all.state[0].toUpperCase() + all.state.slice(1)
+const tempForecasts  = (data) => {
+  let arr = []
+  data.forEach((item, index) => {
+    let inFunc = []
+    inFunc.push(data[index].temperature)
+    let result = fahrenheitToCelsius(inFunc)
+    result[0] = result[0].slice(0, -2)
+    arr.push(result + '°Celsius in ' + item.city + ', ' + upperCasingStates([item.state]))
   })
+  return arr
 }
-const stats = [
-  {city: 'Juneau', state: 'Alaska', region: 'West', temperature: '21°F'},
-  {city: 'Jackson', state: 'mississippi', region: 'South', temperature: '70°F'}
-]
-console.log(tempForecasts(stats))
