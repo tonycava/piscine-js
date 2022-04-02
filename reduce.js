@@ -32,7 +32,3 @@ const reduceRight = (arr, func, acc) => {
   }
   return acc
 }
-const str1 = ['This ', 'is ', 'a ', 'simple ', 'example']
-const concatenate = (a = '', b) => a.concat(b)
-console.log(reduce(str1, concatenate))
-
