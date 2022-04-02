@@ -8,7 +8,7 @@ const every = (arr, func) => {
   let myBool = true
   let yourBool = true
   for (let i = 0; i < arr.length; i++) {
-    if (!func(arr[i])) myBool  = false
+    if (!func(arr[i], i, arr)) myBool  = false
   }
   return myBool && yourBool
 }
