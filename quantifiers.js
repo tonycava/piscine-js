@@ -5,12 +5,12 @@ const some = (arr, func) => {
   return false
 }
 const every = (arr, func) => {
-  let myBool = true
-  let yourBool = true
   for (let i = 0; i < arr.length; i++) {
-    if (!func(arr[i], i, arr)) myBool  = false
+    if (!func(arr[i], i, arr)) {
+      return false
+    }
   }
-  return myBool && yourBool
+  return true
 }
 const none = (arr, func) => {
   for (let i = 0; i < arr.length; i++) {
