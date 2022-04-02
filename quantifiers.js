@@ -7,11 +7,9 @@ const some = (arr, func) => {
 const every = (arr, func) => {
   let myBool = true
   let yourBool = true
-  arr.forEach((item) => {
-    if (!func(item)) {
-      myBool = false
-    }
-  })
+  for (let i = 0; i < arr.length; i++) {
+    if (!func(arr[i])) myBool  = false
+  }
   return myBool && yourBool
 }
 const none = (arr, func) => {
