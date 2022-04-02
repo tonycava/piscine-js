@@ -4,7 +4,7 @@ export const getArchitects = () => {
   let resTagA = []
   let resTagOther = []
   people.forEach((item) => {
-    if (people.tag === 'a') {
+    if (item.tag === 'a') {
       resTagA.push(item)
     } else  {
       resTagOther.push(item)
@@ -13,39 +13,39 @@ export const getArchitects = () => {
   return [resTagA, resTagOther]
 }
 export const getClassical = () => {
-  let resTagA = []
+  let resTagClasse = []
   let resTagOther = []
   people.forEach((item) => {
-    if (people.classe === 'classical') {
-      resTagA.push(item)
+    if (item.classe === 'classical') {
+      resTagClasse.push(item)
     } else  {
       resTagOther.push(item)
     }
   })
-  return [resTagA, resTagOther]
+  return [resTagClasse, resTagOther]
 }
 export const getActive = () => {
-  let resTagA = []
+  let resTagActive = []
   let resTagOther = []
   people.forEach((item) => {
-    if (people.active === true) {
-      resTagA.push(item)
+    if (item.active === true) {
+      resTagActive.push(item)
     } else  {
       resTagOther.push(item)
     }
   })
-  return [resTagA, resTagOther]
+  return [resTagActive, resTagOther]
 }
 
 export const getBonannoPisano = () => {
-  let resTagA = []
+  let resTagId = []
   let resTagOther = []
   people.forEach((item) => {
-    if (people.id === 'BonannoPisano') {
-      resTagA.push(item)
+    if (item.id === 'BonannoPisano') {
+      resTagId.push(item)
     } else  {
       resTagOther.push(item)
     }
   })
-  return [resTagA, resTagOther]
+  return [resTagId, resTagOther]
 }
