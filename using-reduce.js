@@ -1,9 +1,10 @@
-const adder = (arr) => {
-  if (arr.length === 0) return []
-  return arr.reduce((previousValue, currentValue) => previousValue + currentValue);
+function adder(arr,x=0){
+  return arr.reduce(function (sum, current) {
+    return sum + current;
+  }, x)
 }
 const sumOrMul = (arr, elem = 0) => {
-  return arr.reduce((sum, current) => {
+  let result = arr.reduce((sum, current) => {
     let res = 0
     if (sum % 2 === 0) {
       res = sum * current
@@ -12,6 +13,7 @@ const sumOrMul = (arr, elem = 0) => {
     }
     return res
   }, elem)
+  return result
 }
 const funcExec = (func, arg) => {
   let result = func.reduce((sum, current) => {
