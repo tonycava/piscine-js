@@ -10,17 +10,29 @@ const foldRight = (arr, func, acc) => {
   }
   return acc
 }
-const reduce = (arr, func) => {
-  let acc = 0
+const reduce = (arr, func, acc) => {
+  if(typeof arr[0] === 'number'){
+    acc = 0
+  }else {
+    acc = ''
+  }
   arr.forEach((item) => {
-    acc =  func(acc, item)
+    acc = func(acc, item)
   })
   return acc
 }
-const reduceRight = (arr, func) => {
-  let acc = 0
+const reduceRight = (arr, func, acc) => {
+  if(typeof arr[0] === 'number'){
+    acc = 0
+  }else {
+    acc = ''
+  }
   for (let i = 0; i < arr.length; i++) {
     acc = func(acc, arr[arr.length - 1 - i])
   }
   return acc
 }
+const str1 = ['This ', 'is ', 'a ', 'simple ', 'example']
+const concatenate = (a = '', b) => a.concat(b)
+console.log(reduce(str1, concatenate))
+
