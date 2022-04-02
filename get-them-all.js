@@ -10,6 +10,7 @@ export const getArchitects = () => {
       resTagOther.push(item)
     }
   })
+  console.log([resTagA, resTagOther])
   return [resTagA, resTagOther]
 }
 export const getClassical = () => {
@@ -22,6 +23,7 @@ export const getClassical = () => {
       resTagOther.push(item)
     }
   })
+  console.log([resTagClasse, resTagOther])
   return [resTagClasse, resTagOther]
 }
 export const getActive = () => {
@@ -34,6 +36,7 @@ export const getActive = () => {
       resTagOther.push(item)
     }
   })
+  console.log([resTagActive, resTagOther])
   return [resTagActive, resTagOther]
 }
 
@@ -47,5 +50,6 @@ export const getBonannoPisano = () => {
       resTagOther.push(item)
     }
   })
+  console.log([resTagId, resTagOther])
   return [resTagId, resTagOther]
 }
