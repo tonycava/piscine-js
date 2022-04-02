@@ -19,5 +19,5 @@ const partition = (arr, func) => {
     if (!func(arr[i], i, arr)) resGood.push(arr[i])
     resFail.push(arr[i])
   }
-  return [resGood, resFail]
+  return [resFail, resGood]
 }
