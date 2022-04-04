@@ -1,4 +1,5 @@
 const href = document.getElementsByTagName('a');
+const span = document.getElementsByTagName('span');
 
 const isClassical = document.getElementsByClassName("classical")
 const isNotClassical = !document.querySelector("*").classList.contains('classical')
@@ -13,8 +14,8 @@ export const getArchitects = () => {
   let resGoodArchi = []
   let resFailArchi = []
   for (let idx= 0; idx < href.length; idx++) {
-    if (href[idx].innerText === 'Architect') resGoodArchi.push(href[idx])
-    else resFailArchi.push(href[idx])
+    if (href[idx].innerText === 'Architect') resGoodArchi.push(href[idx].id)
+    else resFailArchi.push(span[idx].id)
   }
   return [resGoodArchi, resFailArchi]
 }
@@ -23,8 +24,8 @@ export const getClassical = () => {
   let resGoodArchi = []
   let resFailArchi = []
   for (let idx= 0; idx < href.length; idx++) {
-    if (href[idx].innerText === 'Architect') resGoodArchi.push(href[idx])
-    else resFailArchi.push(href[idx])
+    if (href[idx].innerText === 'Architect') resGoodArchi.push(href.id)
+    else resFailArchi.push(href.id)
   }
   return [resGoodArchi, resFailArchi]
 }
