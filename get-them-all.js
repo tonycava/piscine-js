@@ -12,10 +12,9 @@ const pisanoAll = document.getElementsByClassName('classical active')
 
 export const getArchitects = () => {
   let resGoodArchi = []
-  let resFailArchi = []
+  let resFailArchi = Object.values(span)
   for (let idx= 0; idx < href.length; idx++) {
     if (href[idx].innerText === 'Architect') resGoodArchi.push(href[idx].id)
-    else resFailArchi.push(span[idx].id)
   }
   return [resGoodArchi, resFailArchi]
 }
