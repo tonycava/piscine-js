@@ -18,7 +18,6 @@ const partition = (arr, func) => {
   for (let i = 0; i < arr.length; i++) {
     if (func(arr[i], i, arr)) resGood.push(arr[i])
     if (!func(arr[i], i, arr)) resFail.push(arr[i])
-
   }
   return [resGood, resFail]
 }
