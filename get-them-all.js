@@ -1,8 +1,7 @@
 const href = document.getElementsByTagName('a');
 const span = document.getElementsByTagName('span');
-
 const isClassical = document.getElementsByClassName("classical")
-const isNotClassical = document.querySelectorAll("a:not(.classical)")
+const isNotClassical = Array.from(document.querySelectorAll("a:not(.classical)"))
 
 export const getArchitects = () => {
   let resGoodArchi = Object.values(href)
