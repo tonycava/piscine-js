@@ -131,10 +131,10 @@
   body.append(buttonsContainer)
 
   const buttons = [
-    { name: 'Architect', action: getArchitects() },
-    { name: 'Classical', action: getClassical() },
-    { name: 'Active', action: getActive() },
-    { name: 'Bonanno', action: getBonannoPisano() },
+    { name: 'Architect', action: getArchitects },
+    { name: 'Classical', action: getClassical },
+    { name: 'Active', action: getActive },
+    { name: 'Bonanno', action: getBonannoPisano },
   ]
 
   buttons.forEach(({ name, action }, i) => {
@@ -157,10 +157,6 @@
           t.textContent = name
         })
       }
-
-      others.forEach((o) => {
-        o.style.opacity = 0.2
-      })
 
       btn.className = 'disabled'
 

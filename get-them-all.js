@@ -1,55 +1,29 @@
-import { people } from './get-them-all.data.js'
+const href = document.getElementsByTagName("a")
+const span = document.getElementsByTagName("span")
+
+const isClassical = document.getElementsByClassName("classical")
+const isNotClassical = !document.querySelector("*").classList.contains('classical')
+
+const isActive = document.getElementsByClassName("active")
+const isNotActive = !document.querySelector("*").classList.contains('active')
+
+const pisano = document.getElementById('BonannoPisano')
+const pisanoAll = document.getElementsByClassName('classical active')
 
 export const getArchitects = () => {
-  let resTagA = []
-  let resTagOther = []
-  people.forEach((item) => {
-    if (item.tag === 'a') {
-      resTagA.push(item)
-    } else  {
-      resTagOther.push(item)
-    }
-  })
-  console.log([resTagA, resTagOther])
+  const resTagA = Object.values(href)
+  const resTagOther = Object.values(span)
   return [resTagA, resTagOther]
 }
+
 export const getClassical = () => {
-  let resTagClasse = []
-  let resTagOther = []
-  people.forEach((item) => {
-    if (item.classe === 'classical') {
-      resTagClasse.push(item)
-    } else  {
-      resTagOther.push(item)
-    }
-  })
-  console.log([resTagClasse, resTagOther])
-  return [resTagClasse, resTagOther]
+  return [isClassical, isNotClassical]
 }
+
 export const getActive = () => {
-  let resTagActive = []
-  let resTagOther = []
-  people.forEach((item) => {
-    if (item.active === true) {
-      resTagActive.push(item)
-    } else  {
-      resTagOther.push(item)
-    }
-  })
-  console.log([resTagActive, resTagOther])
-  return [resTagActive, resTagOther]
+  return [isActive, isNotActive]
 }
 
 export const getBonannoPisano = () => {
-  let resTagId = []
-  let resTagOther = []
-  people.forEach((item) => {
-    if (item.id === 'BonannoPisano') {
-      resTagId.push(item)
-    } else  {
-      resTagOther.push(item)
-    }
-  })
-  console.log([resTagId, resTagOther])
-  return [resTagId, resTagOther]
+  return [pisano, pisanoAll]
 }

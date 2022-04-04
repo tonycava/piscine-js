@@ -1,5 +1,5 @@
-function adder(arr,x=0){
-  return arr.reduce(function (sum, current) {
+const adder = (arr,x=0) => {
+  return arr.reduce((sum, current) => {
     return sum + current;
   }, x)
 }
@@ -12,7 +12,7 @@ const sumOrMul = (arr, elem = 0) => {
       res = sum + current
     }
     return res
-  }, elem)
+  },elem)
 }
 const funcExec = (func, arg) => {
   return  func.reduce((sum, current) => {
