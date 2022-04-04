@@ -158,6 +158,10 @@
         })
       }
 
+      others.forEach((o) => {
+        o.style.opacity = 0.2
+      })
+
       btn.className = 'disabled'
 
       const last = i + 1 === buttons.length
