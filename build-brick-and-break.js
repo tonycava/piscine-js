@@ -6,7 +6,8 @@ export const build = (x) => {
     newDiv.id = `brick-${idCustom}`
     newDiv.innerHTML = idCustom
     if (counterFoundation === 3) {
-      newDiv.setAttribute('foundation', 'true');
+      newDiv.dataset.foundation = true
+      counterFoundation = 0
     }
     document.body.appendChild(newDiv)
     idCustom++
