@@ -10,12 +10,13 @@ const pisano = document.getElementById('BonannoPisano')
 const pisanoAll = document.getElementsByClassName('classical active')
 
 export const getArchitects = () => {
-
-
-  const resTagA = Object.values(href)
-  const resTagOther = Object.values(href)
-  console.log([resTagA, resTagOther])
-  return [resTagA, resTagOther]
+  let resGoodArchi = []
+  let resFailArchi = []
+  for (let idx= 0; idx < href.length; idx++) {
+    if (href[idx].innerText === 'Architect') resGoodArchi.push(href[idx])
+    else resFailArchi.push(href[idx])
+  }
+  return [resGoodArchi, resFailArchi]
 }
 
 export const getClassical = () => {
@@ -29,15 +30,21 @@ export const getClassical = () => {
 }
 
 export const getActive = () => {
-  const resTagA = Object.values(href)
-  const resTagOther = Object.values(href)
-  console.log([resTagA, resTagOther])
-  return [resTagA, resTagOther]
+  let resGoodArchi = []
+  let resFailArchi = []
+  for (let idx= 0; idx < href.length; idx++) {
+    if (href[idx].innerText === 'Architect') resGoodArchi.push(href[idx])
+    else resFailArchi.push(href[idx])
+  }
+  return [resGoodArchi, resFailArchi]
 }
 
 export const getBonannoPisano = () => {
-  const resTagA = Object.values(href)
-  const resTagOther = Object.values(href)
-  console.log([resTagA, resTagOther])
-  return [resTagA, resTagOther]
+  let resGoodArchi = []
+  let resFailArchi = []
+  for (let idx= 0; idx < href.length; idx++) {
+    if (href[idx].innerText === 'Architect') resGoodArchi.push(href[idx])
+    else resFailArchi.push(href[idx])
+  }
+  return [resGoodArchi, resFailArchi]
 }
