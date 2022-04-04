@@ -2,13 +2,7 @@ const href = document.getElementsByTagName('a');
 const span = document.getElementsByTagName('span');
 
 const isClassical = document.getElementsByClassName("classical")
-const isNotClassical = !document.querySelector("*").classList.contains('classical')
-
-const isActive = document.getElementsByClassName("active")
-const isNotActive = !document.querySelector("*").classList.contains('active')
-
-const pisano = document.getElementById('BonannoPisano')
-const pisanoAll = document.getElementsByClassName('classical active')
+const isNotClassical = document.querySelectorAll("a:not(.classical)")
 
 export const getArchitects = () => {
   let resGoodArchi = Object.values(href)
