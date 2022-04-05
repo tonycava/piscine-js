@@ -17,7 +17,7 @@ export const styles = [
 ]
 const myBtn = document.getElementsByClassName('button')
 let j = 0
-let k = 0
+let k = -1
 let start = true
 let end = false
 
@@ -36,6 +36,7 @@ export const pimp = () => {
     start = false
     j = 0
     for (let i = 0; i < myBtn.length; i++) {
+
       myBtn[i].classList.remove(styles[styles.length - 1 - k])
     }
     k++
@@ -43,7 +44,7 @@ export const pimp = () => {
       for (let i = 0; i < myBtn.length; i++) {
         myBtn[i].classList.toggle('unpimp')
         start = true
-        k = 0
+        k = -1
       }
     }
 
