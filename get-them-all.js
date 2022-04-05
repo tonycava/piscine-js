@@ -4,7 +4,6 @@ const span = document.getElementsByTagName('span');
 const isClassical = Array.from(document.getElementsByClassName("classical"))
 const isNotClassical = Array.from(document.querySelectorAll("a:not(.classical)"))
 
-
 export const getArchitects = () => {
   let resGoodArchi = Object.values(href)
   let resFailArchi = Object.values(span)
