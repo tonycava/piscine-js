@@ -26,7 +26,9 @@ export const pimp = () => {
     for (let i = 0; i < myBtn.length; i++) {
       if (styles[j] !== undefined) {
         myBtn[i].classList.add(styles[j])
-      } else {
+      }
+      if (j === 14) {
+        console.log('la')
         myBtn[i].classList.toggle('unpimp')
       }
     }
@@ -36,13 +38,16 @@ export const pimp = () => {
     start = false
     j = 0
     for (let i = 0; i < myBtn.length; i++) {
-
-      myBtn[i].classList.remove(styles[styles.length - 1 - k])
+      if (k !== 14) {
+        myBtn[i].classList.remove(styles[styles.length - 1 - k])
+      }
     }
     k++
-    if (k === 16) {
+    if (k === 15) {
       for (let i = 0; i < myBtn.length; i++) {
         myBtn[i].classList.toggle('unpimp')
+        myBtn[i].classList.toggle(styles[0])
+
         start = true
         k = -1
       }
