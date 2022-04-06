@@ -47,7 +47,7 @@ export const pick = async () => {
 
   await document.body.addEventListener('click', async (event) => {
     if (mouseInYLum > 15) {
-      await navigator.clipboard.writeText(null).then(() => null)
+      await navigator.clipboard.writeText('null').then(() => 'null')
     } else {
       await navigator.clipboard.writeText(fullHSL).then(() => fullHSL)
     }
