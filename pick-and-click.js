@@ -56,8 +56,6 @@ export const pick = () => {
     }
   })
 
-
-
   document.body.append(divHue)
   document.body.append(divLum)
 
@@ -81,7 +79,7 @@ export const pick = () => {
     liney.setAttributeNS(null, 'x2', event.clientX)
     liney.setAttributeNS(null, 'y2', window.innerHeight)
 
-    divCenter.innerHTML = fullHSL
+    divCenter.textContent = fullHSL
     divHue.innerHTML = 'hue' + '<br>' + mouseInXHue
     divLum.innerHTML = 'luminosity' + '<br>' + mouseInYLum
   })
