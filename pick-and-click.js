@@ -1,11 +1,14 @@
-let mouseInXHue
-let mouseInYLum
-let fullHSL
+export function pick() {
+  let div1 = document.createElement("div")
+  div1.className = "text"
+  div1.classList.add("hsl")
+  document.body.appendChild(div1)
 
-export const pick = () => {
   let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
   svg.setAttributeNS(null, 'height', window.innerHeight)
   svg.setAttributeNS(null, 'width', window.innerWidth)
+
+
 
   let linex = document.createElementNS('http://www.w3.org/2000/svg', 'line');
   linex.setAttributeNS(null, 'id', 'axisY')
@@ -28,59 +31,64 @@ export const pick = () => {
   svg.appendChild(liney)
   svg.appendChild(linex)
 
+
   document.body.appendChild(svg)
 
-  let divCenter = document.createElement('div')
-  let divHue = document.createElement('div')
-  let divLum = document.createElement('div')
-
-  divCenter.className = 'hsl'
-  divCenter.classList.add('text')
-
-  divHue.className = 'hue'
-  divHue.classList.add('text')
-
-  divLum.className = 'luminosity'
-  divLum.classList.add('text')
-
-  document.body.appendChild(divCenter)
-
-  document.body.addEventListener('click', (event) => {
-    if (mouseInYLum > 15) {
-      console.log(mouseInYLum)
-      navigator.clipboard.writeText(null);
-      event.preventDefault();
-    } else {
-      navigator.clipboard.writeText(fullHSL);
-      event.preventDefault();
-    }
-  })
-
-  document.body.append(divHue)
-  document.body.append(divLum)
-
-  document.body.addEventListener('mousemove', (event) => {
-    mouseInXHue = Math.round(event.clientX / window.innerWidth * 360)
-    mouseInYLum = Math.round(event.clientY / window.innerHeight * 100)
-
-    fullHSL = `hsl(${mouseInXHue},50%,${mouseInYLum + '%'})`
-    document.body.style.background = fullHSL
-
+  addEventListener("mousemove", e => {
+    document.querySelectorAll(".hue", ".hsl").forEach(e => {
+      e.remove()
+    })
+    document.querySelectorAll(".hsl").forEach(e => {
+      e.remove()
+    })
+    document.querySelectorAll(".luminosity").forEach(e => {
+      e.remove()
+    })
     let liney = document.getElementById('axisX')
     let linex = document.getElementById('axisY')
 
     linex.setAttributeNS(null, 'x1', 0)
-    linex.setAttributeNS(null, 'y1', event.clientY)
+    linex.setAttributeNS(null, 'y1', e.clientY)
     linex.setAttributeNS(null, 'x2', window.innerWidth)
-    linex.setAttributeNS(null, 'y2', event.clientY)
+    linex.setAttributeNS(null, 'y2', e.clientY)
 
-    liney.setAttributeNS(null, 'x1', event.clientX)
+    liney.setAttributeNS(null, 'x1', e.clientX)
     liney.setAttributeNS(null, 'y1', 0)
-    liney.setAttributeNS(null, 'x2', event.clientX)
+    liney.setAttributeNS(null, 'x2', e.clientX)
     liney.setAttributeNS(null, 'y2', window.innerHeight)
 
-    divCenter.textContent = fullHSL
-    divHue.innerHTML = 'hue' + '<br>' + mouseInXHue
-    divLum.innerHTML = 'luminosity' + '<br>' + mouseInYLum
+
+
+    let x = e.clientX / window.innerWidth * 360
+    let y = e.clientY / window.innerHeight * 100
+    document.body.style.background = "hsl(" + x + ",50%," + y + "%)"
+    let hue = document.createElement("div")
+    hue.className = "hue"
+    hue.classList.add("text")
+    hue.innerHTML = "hue" + "<br>" + Math.round(x)
+    document.body.appendChild(hue)
+
+    let hsl = document.createElement("div")
+    hsl.className = "hsl"
+    hsl.classList.add("text")
+    hsl.innerHTML = "hsl(" + Math.round(x) + ", 50%, " + Math.round(y) + "%)"
+    document.body.appendChild(hsl)
+
+    let luminosity = document.createElement("div")
+    luminosity.className = "luminosity"
+    luminosity.classList.add("text")
+    luminosity.innerHTML = Math.round(y) + "<br>luminosity"
+    document.body.appendChild(luminosity)
+
   })
-}
+  addEventListener("click", e => {
+    let val = document.getElementsByClassName('hsl')[0].innerHTML;
+    let input = document.createElement('input')
+    document.body.appendChild(input)
+    input.value = val
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input)
+
+  })
+}   
