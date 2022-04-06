@@ -36,6 +36,7 @@ export const pick = () => {
   let divLum = document.createElement('div')
 
   divCenter.className = 'hsl'
+  divCenter.classList.add('text')
 
   divHue.className = 'hue'
   divHue.classList.add('text')
