@@ -56,7 +56,7 @@ export const pick = () => {
     mouseInYLum = Math.round(event.clientY / window.innerHeight * 100)
 
     fullHSL = `hsl(${mouseInXHue},50%,${mouseInYLum + '%'})`
-    document.body.style.backgroundColor = fullHSL
+    document.body.style.background = fullHSL
 
     let liney = document.getElementById('axisX')
     let linex = document.getElementById('axisY')
