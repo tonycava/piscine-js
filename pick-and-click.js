@@ -7,8 +7,7 @@ export const pick = () => {
   divCenter.className = 'hsl'
   divCenter.classList.add('text')
   document.body.appendChild(divCenter).addEventListener('click', (event) => {
-    navigator.clipboard.writeText(fullHSL).then(() => {
-    });
+    navigator.clipboard.writeText(fullHSL)
     event.preventDefault();
   })
 
