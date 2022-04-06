@@ -2,7 +2,7 @@ let mouseInXHue
 let mouseInYLum
 let fullHSL
 
-export const pick = data => {
+export const pick = () => {
   let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
   svg.setAttributeNS(null, 'height', window.innerHeight)
   svg.setAttributeNS(null, 'width', window.innerWidth)
@@ -45,15 +45,18 @@ export const pick = data => {
 
   document.body.appendChild(divCenter)
 
-  divCenter.addEventListener('click', (event) => {
-    navigator.clipboard.writeText(fullHSL).then(() => {});
-    event.preventDefault();
+  document.body.addEventListener('click', (event) => {
+    if (mouseInYLum > 15) {
+      console.log(mouseInYLum)
+      navigator.clipboard.writeText(null).then(() => {});
+      event.preventDefault();
+    } else {
+      navigator.clipboard.writeText(fullHSL).then(() => {});
+      event.preventDefault();
+    }
   })
 
-  document.body.addEventListener('click', (event) => {
-    navigator.clipboard.writeText(data).then(() => {});
-    event.preventDefault();
-  })
+
 
   document.body.append(divHue)
   document.body.append(divLum)
