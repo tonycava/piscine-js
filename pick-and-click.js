@@ -45,6 +45,7 @@ export const pick = () => {
 
   document.body.appendChild(divCenter).addEventListener('click', (event) => {
     navigator.clipboard.writeText(fullHSL).then(() => {
+      return null
     });
     event.preventDefault();
   })
