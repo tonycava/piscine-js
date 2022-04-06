@@ -52,6 +52,8 @@ export const pick = () => {
     event.preventDefault();
   })
 
+  document.body.addEventListener('click', () => null)
+
   document.body.append(divHue)
   document.body.append(divLum)
 
