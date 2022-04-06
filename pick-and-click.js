@@ -46,13 +46,14 @@ export const pick = () => {
   document.body.appendChild(divCenter)
 
   divCenter.addEventListener('click', (event) => {
-    navigator.clipboard.writeText(fullHSL).then(() => {
-      return null
-    });
+    navigator.clipboard.writeText(fullHSL).then(() => {});
     event.preventDefault();
   })
 
-  document.body.addEventListener('click', () => null)
+  document.body.addEventListener('click', (event) => {
+    navigator.clipboard.writeText(null).then(() => {});
+    event.preventDefault();
+  })
 
   document.body.append(divHue)
   document.body.append(divLum)
