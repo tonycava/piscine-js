@@ -3,14 +3,6 @@ let mouseInYLum
 let fullHSL
 
 export const pick = () => {
-  let divCenter = document.createElement('div')
-  divCenter.className = 'hsl'
-  divCenter.classList.add('text')
-  document.body.appendChild(divCenter).addEventListener('click', (event) => {
-    navigator.clipboard.writeText(fullHSL)
-    event.preventDefault();
-  })
-
   let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
   svg.setAttributeNS(null, 'height', window.innerHeight)
   svg.setAttributeNS(null, 'width', window.innerWidth)
@@ -38,14 +30,24 @@ export const pick = () => {
 
   document.body.appendChild(svg)
 
+  let divCenter = document.createElement('div')
   let divHue = document.createElement('div')
   let divLum = document.createElement('div')
+
+  divCenter.className = 'hsl'
+  divCenter.classList.add('text')
 
   divHue.className = 'hue'
   divHue.classList.add('text')
 
   divLum.className = 'luminosity'
   divLum.classList.add('text')
+
+  document.body.appendChild(divCenter).addEventListener('click', (event) => {
+    navigator.clipboard.writeText(fullHSL).then(() => {
+    });
+    event.preventDefault();
+  })
 
   document.body.append(divHue)
   document.body.append(divLum)
