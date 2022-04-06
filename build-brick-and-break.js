@@ -20,7 +20,7 @@ export const build = (x) => {
 
 export const repair = (...repairs) => {
   for (let i = 0; i < repairs.length; i++) {
-    let elem = document.getElementById(repairs[i])
+    const elem = document.getElementById(repairs[i])
     let n = repairs[i].replace('brick-', '')
     if (n % 3 === 2) {
       elem.setAttribute('data-repaired', "in progress")
