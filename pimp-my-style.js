@@ -20,8 +20,6 @@ console.log(myBtn[0])
 let j = 0
 let k = -1
 let start = true
-let end = false
-
 export const pimp = () => {
   if (start) {
       if (styles[j] !== undefined) {
@@ -43,7 +41,6 @@ export const pimp = () => {
     if (k === 15) {
         myBtn[0].classList.toggle('unpimp')
         myBtn[0].classList.toggle(styles[0])
-
         start = true
         k = -1
       }

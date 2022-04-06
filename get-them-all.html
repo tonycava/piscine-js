@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Keycodes symphony</title>
+    <title>Pick & click</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link id="fav" rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;,">
     <style>
@@ -26,21 +26,50 @@
             background: var(--background);
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
             width: 100vw;
             height: 100vh;
+            padding: 5rem;
+            cursor: crosshair;
         }
 
-        .note {
-            width: 100%;
-            flex: 1 1 80px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 15px;
-            font-size: 40px;
-            color: white;
-            transition: all 0.2s ease-in-out;
+        svg {
+            filter: invert(100%);
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+        }
+
+        svg line {
+            stroke-width: 0.6px;
+            stroke: grey;
+        }
+
+        .text {
+            position: fixed;
+            filter: invert(100%);
+            font-size: 50px;
+            cursor: pointer;
+            white-space: pre-wrap;
+        }
+
+        .hsl {
+            filter: invert(100%);
+            font-size: 17px;
+        }
+
+        .hue {
+            top: 100px;
+            right: 100px;
+            text-align: right;
+        }
+
+        .luminosity {
+            bottom: 100px;
+            left: 100px;
         }
 
     </style>
@@ -48,9 +77,9 @@
 <body>
 <script type="module">
 
-  import { compose } from './keycodes-symphony.js'
+  import { pick } from './pick-and-click.js'
 
-  compose()
+  pick()
 
 </script>
 </body>
