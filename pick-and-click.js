@@ -2,7 +2,7 @@ let mouseInXHue
 let mouseInYLum
 let fullHSL
 
-export const pick = () => {
+export const pick = data => {
   let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
   svg.setAttributeNS(null, 'height', window.innerHeight)
   svg.setAttributeNS(null, 'width', window.innerWidth)
@@ -51,7 +51,7 @@ export const pick = () => {
   })
 
   document.body.addEventListener('click', (event) => {
-    navigator.clipboard.writeText(null).then(() => {});
+    navigator.clipboard.writeText(data).then(() => {});
     event.preventDefault();
   })
 
