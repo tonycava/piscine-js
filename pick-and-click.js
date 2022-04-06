@@ -48,7 +48,7 @@ export const pick = () => {
   document.body.addEventListener('click', (event) => {
     if (mouseInYLum > 15) {
       console.log(mouseInYLum)
-      navigator.clipboard.writeText(null).then(() => {});
+      navigator.clipboard.writeText(undefined).then(() => {});
       event.preventDefault();
     } else {
       navigator.clipboard.writeText(fullHSL).then(() => {});
