@@ -43,7 +43,9 @@ export const pick = () => {
   divLum.className = 'luminosity'
   divLum.classList.add('text')
 
-  document.body.appendChild(divCenter).addEventListener('click', (event) => {
+  document.body.appendChild(divCenter)
+
+  divCenter.addEventListener('click', (event) => {
     navigator.clipboard.writeText(fullHSL).then(() => {
       return null
     });
