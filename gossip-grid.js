@@ -77,7 +77,7 @@ export const grid = (node, child) => {
   let rangeBackground = document.createElement('input')
   rangeBackground.type = 'range'
   rangeBackground.className = 'range'
-  rangeBackground.value = '25'
+  rangeBackground.value = '20'
   rangeBackground.id = 'background'
   rangeBackground.min = '25'
   rangeBackground.max = '75'
