@@ -79,7 +79,7 @@ export const grid = (node, child) => {
   rangeBackground.className = 'range'
   rangeBackground.value = '20'
   rangeBackground.id = 'background'
-  rangeBackground.min = '25'
+  rangeBackground.min = '20'
   rangeBackground.max = '75'
 
   let rangeBackgroundSpan = document.createElement('label')
@@ -98,7 +98,7 @@ export const grid = (node, child) => {
     const div = Object.values(document.querySelectorAll('.gossip'))
     console.log()
     div.forEach((item) => {
-      item.style.backgroundColor = `hsl(280,50%,${rangeBackground.value + '%'})`
+      item.style.background = `hsl(280,50%,${rangeBackground.value + '%'})`
     })
   }
 
