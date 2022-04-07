@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Pick & click</title>
+    <title>Gossip grid</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link id="fav" rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;,">
     <style>
-
         :root {
             --background: hsl(0, 0%, 12%);
             --text: hsl(0, 0%, 80%);
@@ -22,64 +21,114 @@
 
         body {
             font-family: sans-serif;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             background: var(--background);
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            align-content: center;
             width: 100vw;
             height: 100vh;
-            padding: 5rem;
-            cursor: crosshair;
+            padding: 10rem;
+            align-items: flex-start;
         }
 
-        svg {
-            filter: invert(100%);
+        .gossip {
+            background: hsl(280, 50%, 50%);
+            margin: 20px;
+            width: 250px;
+            padding: 20px 25px;
+            line-height: 30px;
+            font-size: 20px;
+            word-break: break-word;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        .gossip:first-letter {
+            text-transform: uppercase;
+        }
+
+        .ranges {
             position: fixed;
-            width: 100vw;
-            height: 100vh;
-            top: 0;
-            left: 0;
+            top: 5rem;
+            display: flex;
         }
 
-        svg line {
-            stroke-width: 0.6px;
-            stroke: grey;
+        .range {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--clear);
+            font-family: monospace;
         }
 
-        .text {
-            position: fixed;
-            filter: invert(100%);
-            font-size: 50px;
-            cursor: pointer;
-            white-space: pre-wrap;
+        .range label,
+        .range span {
+            width: 100px;
         }
 
-        .hsl {
-            filter: invert(100%);
-            font-size: 17px;
-        }
-
-        .hue {
-            top: 100px;
-            right: 100px;
+        .range label {
             text-align: right;
         }
 
-        .luminosity {
-            bottom: 100px;
-            left: 100px;
+        input {
+            margin: 20px 25px;
+        }
+
+        textarea {
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+            outline: none;
+            border: none;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            letter-spacing: inherit;
+            color: inherit;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            resize: none;
+        }
+
+        textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        button {
+            margin-top: 20px;
+            text-align: right;
+            border: solid 1px white;
+            align-self: flex-end;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+
+        .fade-in {
+            animation: fade-in 0.75s;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 100%;
+            }
         }
 
     </style>
 </head>
 <body>
+
 <script type="module">
 
-  import { pick } from './pick-and-click.js'
+  import { grid } from './gossip-grid.js'
 
-  pick()
+  grid()
 
 </script>
 </body>
