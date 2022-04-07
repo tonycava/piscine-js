@@ -89,7 +89,7 @@ export const grid = (node, child) => {
 
   let rangeBackgroundP = document.createElement('p')
   rangeBackgroundP.className = 'range'
-  rangeBackgroundP.textContent = '25'
+  rangeBackgroundP.textContent = '20'
 
   rangeBackground.oninput = () => {
 
