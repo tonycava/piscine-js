@@ -11,7 +11,7 @@ const pick = (obj, arr) => {
   return newObj
 }
 
-const omit = () => {
+const omit = (obj, arr) => {
     let newObjOmit = {}
     const keys = Object.keys(obj)
 
