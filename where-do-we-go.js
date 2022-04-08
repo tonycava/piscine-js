@@ -107,6 +107,7 @@ export const places = [
 ]
 export const explore = () => {
   const coordinatesSort = goodSortObject()
+  console.log(coordinatesSort)
   showImage(coordinatesSort)
   scrollDownOrUp()
   showGoodA(coordinatesSort)
@@ -129,23 +130,23 @@ const showGoodA = (coordinatesSortArg) => {
 const goodSortObject = () => {
   let resNorth = []
   let resSouth = []
-
   places.forEach((item) => {
     const split = item.coordinates.split(' ')
     if (split[0].slice(-1) === 'N') resNorth.push(item)
     else resSouth.push(item)
   })
-  const sortNorth = sortMethod(resNorth)
-  const sortSouth = sortMethod(resSouth)
+  const sortNorth = sortMethod(resNorth, true)
+  const sortSouth = sortMethod(resSouth, false)
   return sortNorth.concat(sortSouth)
 }
 
-const sortMethod = (arg) => {
+const sortMethod = (arg, bool) => {
   const regex = /[°'.]/g
   return arg.sort((a, b) => {
     const sortA = a.coordinates.slice(0, 7).replace(regex, '')
     const sortB = b.coordinates.slice(0, 7).replace(regex, '')
-    return sortB - sortA
+    if (bool) return sortB - sortA
+    else return sortA - sortB
   })
 }
 
