@@ -11,4 +11,17 @@ const pick = (obj, arr) => {
   return newObj
 }
 
+const omit = () => {
+    let newObjOmit = {}
+    const keys = Object.keys(obj)
+
+    keys.forEach((item) => {
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== item && Array.isArray(arr)) newObjOmit[item] = obj[item]
+        else if (arr !== item) newObjOmit[item] = obj[item]
+      }
+    })
+    return newObjOmit
+}
+
 
