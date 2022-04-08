@@ -154,7 +154,6 @@ export const generateClasses = () => {
   document.head.appendChild(style);
 }
 
-
 export const generateColdShades = () => {
   colors.forEach((item) => {
     if (item.includes('aqua') || item.includes('blue') || item.includes('turquoise') || item.includes('green')
