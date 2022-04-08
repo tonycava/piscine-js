@@ -148,7 +148,7 @@ const showImage = (coordinatesSortArg) => {
     let split = item.name.split(',')
     let goodNameForFile = split[0].toLocaleLowerCase().replaceAll(' ', '-') + '.jpg'
     let sec = document.createElement('section')
-    sec.style.backgroundImage = `url('./where-do-we-go_images/${goodNameForFile}')`
+    sec.style.background = `url('./where-do-we-go_images/${goodNameForFile}')`
     sec.style.backgroundRepeat = "no-repeat"
     sec.style.backgroundSize = "cover"
     document.body.appendChild(sec)
