@@ -106,8 +106,7 @@ export const places = [
   },
 ]
 export const explore = () => {
-  const coordinatesSort = goodObject()
-  console.log(coordinatesSort)
+  const coordinatesSort = goodSortObject()
   showImage(coordinatesSort)
   scrollDownOrUp()
   showGoodA(coordinatesSort)
@@ -119,30 +118,33 @@ const showGoodA = (coordinatesSortArg) => {
   newA.target = '_blank'
   document.body.appendChild(newA)
 
-
   window.addEventListener('scroll', () => {
-    const vHeight = (window.innerHeight || document.documentElement.clientHeight);
-    const div = document.getElementsByTagName('section')
-
-
-    for (let i = 0; i < div.length; i++) {
-      const { top, bottom } = div[i].getBoundingClientRect();
-      if ((top > 0 || bottom > 0) && top < vHeight / 2 && bottom > vHeight / 2) {
-        newA.textContent = `${coordinatesSortArg[i].name}\n${coordinatesSortArg[i].coordinates}`
-        newA.style.color = coordinatesSortArg[i].color
-        newA.href = `https://www.google.com/maps/place/${coordinatesSortArg[i].coordinates}`
-      }
-    }
+    const index = Math.floor((window.scrollY + window.innerHeight / 2) / window.innerHeight)
+    newA.textContent = `${coordinatesSortArg[index].name}\n${coordinatesSortArg[index].coordinates}`
+    newA.style.color = coordinatesSortArg[index].color
+    newA.href = `https://www.google.com/maps/place/${coordinatesSortArg[index].coordinates}`
   })
 }
 
-const goodObject = () => {
+const goodSortObject = () => {
+  let resNorth = []
+  let resSouth = []
+
+  places.forEach((item) => {
+    const split = item.coordinates.split(' ')
+    if (split[0].slice(-1) === 'N') resNorth.push(item)
+    else resSouth.push(item)
+  })
+  const sortNorth = sortMethod(resNorth)
+  const sortSouth = sortMethod(resSouth)
+  return sortNorth.concat(sortSouth)
+}
+
+const sortMethod = (arg) => {
   const regex = /[°'.]/g
-  return places.sort((a, b) => {
+  return arg.sort((a, b) => {
     const sortA = a.coordinates.slice(0, 7).replace(regex, '')
     const sortB = b.coordinates.slice(0, 7).replace(regex, '')
-    console.log(sortA)
-    console.log(sortB)
     return sortB - sortA
   })
 }
