@@ -107,7 +107,6 @@ export const places = [
 ]
 export const explore = () => {
   const coordinatesSort = goodSortObject()
-  console.log(coordinatesSort)
   showImage(coordinatesSort)
   scrollDownOrUp()
   showGoodA(coordinatesSort)
@@ -165,7 +164,6 @@ const showImage = (coordinatesSortArg) => {
 const scrollDownOrUp = () => {
   let oldValue = 0
   let newValue = 0
-
   let directionDiv = document.createElement('div')
   directionDiv.className = 'direction'
   document.body.appendChild(directionDiv)

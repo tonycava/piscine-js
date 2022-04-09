@@ -12,16 +12,23 @@ const pick = (obj, arr) => {
 }
 
 const omit = (obj, arr) => {
-    let newObjOmit = {}
-    const keys = Object.keys(obj)
-
-    keys.forEach((item) => {
-      for (let i = 0; i < arr.length; i++) {
-        if (arr[i] !== item && Array.isArray(arr)) newObjOmit[item] = obj[item]
-        else if (arr !== item) newObjOmit[item] = obj[item]
-      }
+  let newObj = obj
+  if (Array.isArray(arr)) {
+    arr.forEach((item) => {
+      delete newObj[item]
     })
-    return newObjOmit
+  } else {
+    delete newObj[arr]
+  }
+  return newObj
 }
 
-
+// const tools = { drill: 'bosh', grinders: 'DeWalt', saws: ' Makita' }
+// const games = { board: 'monopoly', cards: 'poker', dice: 'roulette' }
+// const language = { England: 'english', Spain: 'spanish', Portugal: 'portuguese' }
+// const phone = { samsung: 'galaxy', asus: 'zenphone', nokia: 'lumia' }
+//
+// console.log(omit(tools, ['grinders', 'saws']))
+// console.log(omit(games, ['board', 'cards']))
+// console.log(omit(language, 'Spain'))
+// console.log(omit(phone, 'iphone'))
