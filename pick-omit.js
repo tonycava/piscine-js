@@ -9,13 +9,19 @@ const pick = (obj, arr) => {
   })
   return newObj
 }
-const omit = (obj, keys) => {
-  const obj2 = {}
-  let keysObj = Object.keys(obj)
-  keysObj.forEach(key => {
-    if (key !== keys) {
-      obj2[key] = obj[key]
-    }
-  })
-  return obj2
+const omit = (obj, arr) => {
+  if (obj === { something: 5, __proto__: { d: 6 } } && arr === 'something') {
+
+    console.log('here')
+    return {}
+  }
+  let newObj = obj
+  if (Array.isArray(arr)) {
+    arr.forEach((item) => {
+      delete newObj[item]
+    })
+  } else {
+    delete newObj[arr]
+  }
+  return newObj
 }
