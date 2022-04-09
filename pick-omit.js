@@ -20,3 +20,5 @@ const omit = (obj, arr) => {
   }
   return newObj
 }
+// console.log(omit({ something: 5, __proto__: { d: 6 } }, 'something'))
+// console.log(pick({ something: 5, __proto__: { d: 6 } }, ['proto', 'something']))
