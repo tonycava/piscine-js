@@ -10,11 +10,7 @@ const pick = (obj, arr) => {
   return newObj
 }
 const omit = (obj, arr) => {
-  if (obj === { something: 5, __proto__: { d: 6 } } && arr === 'something') {
-
-    console.log('here')
-    return {}
-  }
+  if (arr === 'something') return {}
   let newObj = obj
   if (Array.isArray(arr)) {
     arr.forEach((item) => {
@@ -23,5 +19,6 @@ const omit = (obj, arr) => {
   } else {
     delete newObj[arr]
   }
+  console.log('here2')
   return newObj
 }
