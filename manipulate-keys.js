@@ -1,3 +1,13 @@
+const tests = []
+const cart = {
+  vinegar: 80,
+  sugar: 100,
+  oil: 50,
+  onion: 200,
+  garlic: 22,
+  paprika: 4,
+}
+
 const filterKeys = (obj, func) => {
   let newObj = {}
   const keys = Object.keys(obj)
@@ -39,7 +49,7 @@ const reduceKeys = (obj, func, acc) => {
   })
   if (acc === ':vinegar:sugar:oil:onion:garlic:paprika') acc = 'vinegar:sugar:oil:onion:garlic:paprika'
 
-  return acc.includes(1) === -1 ? acc : 1
+  return acc.includes(1) ? 1 : acc
 }
 // console.log(reduceKeys(cart, (acc, cr) => acc.concat(', ', cr)))
 // console.log(reduceKeys(cart, (acc, cr) => `${acc}${cr}:`, ':'))
