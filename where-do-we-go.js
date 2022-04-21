@@ -119,7 +119,9 @@ const showGoodA = (coordinatesSortArg) => {
   document.body.appendChild(newA)
 
   window.addEventListener('scroll', () => {
+
     const index = Math.floor((window.scrollY + window.innerHeight / 2) / window.innerHeight)
+
     newA.textContent = `${coordinatesSortArg[index].name}\n${coordinatesSortArg[index].coordinates}`
     newA.style.color = coordinatesSortArg[index].color
     newA.href = `https://www.google.com/maps/place/${coordinatesSortArg[index].coordinates}`
