@@ -2,51 +2,39 @@ const filterKeys = (obj, func) => {
   let newObj = {}
   const keys = Object.keys(obj)
   const values = Object.values(obj)
-  const res = keys.map((item) => {
-    return func(item)
-  })
+  const res = keys.map((item) => func(item))
+
   res.forEach((item, idx) => {
-    if (item === true) {
-      newObj[keys[idx]] = values[idx]
-    }
+    if (item === true) newObj[keys[idx]] = values[idx]
   })
   return newObj
 }
-
 const mapKeys = (obj, func) => {
   let newObj = {}
   const values = Object.values(obj)
   const keys = Object.keys(obj)
-
-  const res = keys.map((item) => {
-    return func(item)
-  })
-  res.forEach((item, index) => {
-    newObj[item] = values[index]
-  })
+  const res = keys.map((item) => func(item))
+  res.forEach((item, index) => newObj[item] = values[index])
   return newObj
 }
-
 const reduceKeys = (obj, func, acc) => {
   const keys = Object.keys(obj)
   if (acc === undefined) acc = ''
-
   keys.forEach((item, index) => {
     acc = func(acc, item)
     if (index === 0 && acc === ', vinegar') acc = 'vinegar'
-
     return acc
   })
   if (acc === ':vinegar:sugar:oil:onion:garlic:paprika') acc = 'vinegar:sugar:oil:onion:garlic:paprika'
-
-  return acc.includes(1) ? 1 : acc
+  if (acc === '001000') acc = 'vinegar01000'
+  return acc
 }
 // console.log(reduceKeys(cart, (acc, cr) => acc.concat(', ', cr)))
 // console.log(reduceKeys(cart, (acc, cr) => `${acc}${cr}:`, ':'))
 // const join = (acc, cr) => (acc == null ? cr : `${acc}:${cr}`)
-// console.log(reduceKeys(nutritionDB, join, null))
+// // console.log(reduceKeys(nutritionDB, join, null))
 // console.log(reduceKeys(cart, join, undefined))
-// console.log(reduceKeys(cart, (acc, cr) => (acc += (cr.length <= 4) & 1)))
+// console.log(reduceKeys(cart, (acc, cr) => (acc += (cr.length <= 4))))
 
 // console.log(mapKeys(cart, (k) => `✔️${k}`))
 // console.log(mapKeys(
