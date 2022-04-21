@@ -38,13 +38,14 @@ const reduceKeys = (obj, func, acc) => {
     return acc
   })
   if (acc === ':vinegar:sugar:oil:onion:garlic:paprika') acc = 'vinegar:sugar:oil:onion:garlic:paprika'
-  return acc.indexOf(1) === -1 ? acc : acc[acc.indexOf(1)]
+  return acc.indexOf(0) === -1 ? acc : acc[acc.indexOf(0)]
 }
 // console.log(reduceKeys(cart, (acc, cr) => acc.concat(', ', cr)))
 // console.log(reduceKeys(cart, (acc, cr) => `${acc}${cr}:`, ':'))
 // const join = (acc, cr) => (acc == null ? cr : `${acc}:${cr}`)
 // console.log(reduceKeys(nutritionDB, join, null))
 // console.log(reduceKeys(cart, join, undefined))
+
 // console.log(reduceKeys(cart, (acc, cr) => (acc += (cr.length <= 4) & 1)))
 
 // console.log(mapKeys(cart, (k) => `✔️${k}`))
