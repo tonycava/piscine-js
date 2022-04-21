@@ -1,13 +1,3 @@
-const tests = []
-const cart = {
-  vinegar: 80,
-  sugar: 100,
-  oil: 50,
-  onion: 200,
-  garlic: 22,
-  paprika: 4,
-}
-
 const filterKeys = (obj, func) => {
   let newObj = {}
   const keys = Object.keys(obj)
