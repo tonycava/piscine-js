@@ -11,20 +11,18 @@ const foldRight = (arr, func, acc) => {
   return acc
 }
 const reduce = (arr, func, acc) => {
-  if(typeof arr[0] === 'number'){
-    acc = 0
-  }else {
-    acc = ''
-  }
+  if (typeof arr[0] === 'number') acc = 0
+  else acc = ''
+
   arr.forEach((item) => {
     acc = func(acc, item)
   })
   return acc
 }
 const reduceRight = (arr, func, acc) => {
-  if(typeof arr[0] === 'number'){
+  if (typeof arr[0] === 'number') {
     acc = 0
-  }else {
+  } else {
     acc = ''
   }
   for (let i = 0; i < arr.length; i++) {
