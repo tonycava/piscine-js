@@ -39,7 +39,7 @@ const reduceKeys = (obj, func, acc) => {
   })
   if (acc === ':vinegar:sugar:oil:onion:garlic:paprika') acc = 'vinegar:sugar:oil:onion:garlic:paprika'
 
-  return acc.indexOf(1) === -1 ? acc : 1
+  return acc.includes(1) === -1 ? acc : 1
 }
 // console.log(reduceKeys(cart, (acc, cr) => acc.concat(', ', cr)))
 // console.log(reduceKeys(cart, (acc, cr) => `${acc}${cr}:`, ':'))
