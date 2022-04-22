@@ -8,6 +8,7 @@ const map = (arr,func) => {
 const flatMap = (arr, fun) => {
   let res = []
   let response = map(arr, fun)
+
   for (const i of response) {
     if (Array.isArray(i)) {
       for (let j of i) {
