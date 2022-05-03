@@ -1,3 +1,3 @@
 const deepCopy = (obj) => {
-  return 'la'
+  return Object.fromEntries(Object.entries(obj))
 }
