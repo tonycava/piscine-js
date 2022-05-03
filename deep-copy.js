@@ -1,3 +1,1 @@
-const deepCopy = (obj) => {
-  return Object.fromEntries(Object.entries(obj))
-}
+const deepCopy = (obj) => Object.fromEntries(Object.entries(obj))
