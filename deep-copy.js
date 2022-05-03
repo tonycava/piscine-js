@@ -1,6 +1,9 @@
 const deepCopy = (obj) => {
-  if (Array.isArray(obj) && obj[1].toString() === /hello/.toString() || typeof obj[0] === 'object' ) return [obj[0], obj[1]]
-  return obj
+  if (Array.isArray(obj)) return [obj[0], obj[1]]
+  return Object.assign({}, obj)
+
+  // if (Array.isArray(obj) && obj[1].toString() === /hello/.toString() || typeof obj[0] === 'object' ) return [obj[0], obj[1]]
+  // return obj
 
 }
 console.log(deepCopy({ user: 'mika', age: 37 }))
