@@ -1,4 +1,5 @@
 const deepCopy = (obj) => {
+  if (Object.isFrozen(obj)) return Object.assign({}, obj)
   if (Array.isArray(obj)) return [obj[0], obj[1]]
   return Object.assign({}, obj)
 
