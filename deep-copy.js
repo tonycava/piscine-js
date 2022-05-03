@@ -1,1 +1,3 @@
-const deepCopy = (obj) => Object.fromEntries(Object.entries(obj))
+const deepCopy = (obj) => {
+  return JSON.stringify(obj)
+}
