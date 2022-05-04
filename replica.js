@@ -1,9 +1,12 @@
 const replica = (obj,...copies) => {
-  obj = Object.assign({}, copies)
-  let end = {}
-
-  Object.values(obj).forEach((item) => {
-    end = {...end, ...item}
+  Object.values(copies).forEach((item) => {
+    obj = {...obj, ...item}
   })
-  return end
+  return obj
 }
+// console.log(replica({ con: console.log }, { reg: /hello/ }))
+// console.log(replica(
+//   {},
+//   Object.freeze({ line: 'Replicants are like any other machine' }),
+//   Object.freeze({ author: 'Rich' })
+// ))
