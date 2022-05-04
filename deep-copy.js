@@ -1,5 +1,5 @@
 const deepCopy = (obj) => {
-  if (obj[0] < 1) return 'it might work'
+  if (obj[0] < 1) return JSON.parse(JSON.stringify(obj))
   if (Array.isArray(obj)) return [obj[0], obj[1]]
   return Object.assign({}, obj)
 }
