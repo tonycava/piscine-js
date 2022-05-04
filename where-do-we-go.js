@@ -169,6 +169,7 @@ const scrollDownOrUp = () => {
   let directionDiv = document.createElement('div')
   directionDiv.className = 'direction'
   document.body.appendChild(directionDiv)
+
   window.addEventListener('scroll', () => {
     newValue = window.pageYOffset;
 
