@@ -2,6 +2,7 @@ const fusion = (obj1, obj2) => {
   let newObj = {}
   const valuesCon = Object.values(obj1).concat(Object.values(obj2))
   const keysCon = Object.keys(obj1).concat(Object.keys(obj2))
+
   if (typeof obj1['nbr'] === 'number') {
     const total = valuesCon.reduce((acc, current) => {
       return acc + Number(current)

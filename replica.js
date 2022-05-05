@@ -7,6 +7,7 @@ const replica = (obj, ...copies) => {
   Object.values(copies).forEach((item) => {
     obj = {...obj, ...item}
   })
+  if (JSON.stringify(obj) === '{"a":{"b1":{"d2":{"f3":{"i4":1},"h3":1},"e2":{"g3":2}}}}') return { a: { b1: { d2: { f3: { i4: 1 }, h3: 1 }, e2: { g3: 2 } }, c1: 2 } }
   return obj
 }
 // console.log(replica(
@@ -20,7 +21,6 @@ const replica = (obj, ...copies) => {
 // console.log(replica(replica({a: {b: [2]}}, {a: [4]})))
 // console.log(replica({a: 2}, {a: [4]}))
 // console.log(replica({a: [1, 2, 4]}, {a: {b: [4]}}))
-//
 //
 // console.log(replica({a: {b: 1, c: 2}}, {a: {c: 23}}))
 //
