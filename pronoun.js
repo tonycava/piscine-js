@@ -37,4 +37,4 @@ const pronoun = (arg) => {
 //
 // console.log(pronoun(`it i it she is gone`))
 // console.log(pronoun('she she she she is'))
-console.log(pronoun('we will rock you'))
+// console.log(pronoun('we will rock you'))
