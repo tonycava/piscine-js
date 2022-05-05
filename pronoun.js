@@ -16,7 +16,7 @@ const pronoun = (arg) => {
     Object.keys(obj).forEach((item) => {
       if (item === arr[0].toLowerCase()) {
         obj[item]['count'] += 1
-        obj[item]['word'].push(arr[1])
+        if (arr[1] !== undefined) obj[item]['word'].push(arr[1])
       }
     })
   })
@@ -37,4 +37,4 @@ const pronoun = (arg) => {
 //
 // console.log(pronoun(`it i it she is gone`))
 // console.log(pronoun('she she she she is'))
-// console.log(pronoun('we will rock you'))
+console.log(pronoun('we will rock you'))
