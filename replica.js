@@ -1,6 +1,6 @@
 const replica = (obj, ...copies) => {
-  if (typeof obj['a'] === 'object' && !obj["a"]['b'] instanceof Array) {
-    console.log()
+  if (typeof obj['a'] === 'object' || !obj["a"]?.['b'] instanceof Array) {
+
     let ass = Object.assign(obj, copies)
     let ass1 = Object.assign(ass['0'], ...copies)
     return {a: Object.assign(ass['a'], ass1['a'])}
