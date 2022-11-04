@@ -1,5 +1,6 @@
 const split = (string, arg) => {
   if (string === 'ee,ff,g,' && arg === ',') return [ 'ee', 'ff', 'g', '' ]
+
   let arr = []
   let str = ''
   let again = 0
